@@ -1,0 +1,2301 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. Dayana Gonçalves — Usucapião e Regularização de Imóveis</title>
+<meta name="description" content="Proteja seu patrimônio com a Dra. Dayana Gonçalves. Assessoria especializada em Usucapião Judicial e Extrajudicial, e regularização completa de imóveis.">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<script>if(localStorage.getItem('theme') === 'light') document.documentElement.setAttribute('data-theme', 'light');</script>
+
+<style>
+/* ══════════════════════════════════════════
+   TOKENS
+══════════════════════════════════════════ */
+:root {
+  --gold:#c9a84c;
+  --gold-light:#e8cc7e;
+  --gold-pale:#F5EDCF;
+  --gold-dim:rgba(201,168,76,.12);
+  --gold-line:rgba(201,168,76,.22);
+  --noir:#0a0a0a;
+  --noir-2:#141414;
+  --noir-3:#1E1E1E;
+  --noir-4:#252525;
+  --white:#FAF8F4;
+  --cream:#F0EAD6;
+  --text-mid:#999;
+  --text-low:#555;
+  --serif:'Playfair Display',serif;
+  --serif2:'Cormorant Garamond',serif;
+  --sans:'DM Sans',sans-serif;
+  --mono:'DM Mono',monospace;
+  --bg-rgb:10,10,10;
+  --text-rgb:250,248,244;
+}
+[data-theme="light"] {
+  --noir:#FAF8F4; --noir-2:#F2EFE9; --noir-3:#EAE6DE; --noir-4:#E0DBCF;
+  --white:#111; --cream:#222;
+  --text-mid:#666; --text-low:#888;
+  --bg-rgb:250,248,244; --text-rgb:10,10,10;
+}
+
+/* ══════════════════════════════════════════
+   BASE
+══════════════════════════════════════════ */
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:16px; }
+body { background:var(--noir); color:var(--white); font-family:var(--sans); overflow-x:hidden; transition:background .4s,color .4s; }
+body::before {
+  content:''; position:fixed; inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events:none; z-index:9000; opacity:.4;
+}
+
+/* ══════════════════════════════════════════
+   NAV — página interna (mais simples)
+══════════════════════════════════════════ */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:1000;
+  padding:20px 60px;
+  display:flex; align-items:center; justify-content:space-between;
+  background:rgba(var(--bg-rgb),.92);
+  border-bottom:1px solid rgba(201,168,76,.08);
+  backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+  transition:all .4s;
+}
+nav.scrolled { padding:14px 60px; border-bottom-color:rgba(201,168,76,.2); }
+.logo-img { height:56px; width:auto; display:block; object-fit:contain; }
+
+/* breadcrumb / contexto */
+.nav-breadcrumb {
+  display:flex; align-items:center; gap:10px;
+  font-family:var(--mono); font-size:.68rem; letter-spacing:.12em; text-transform:uppercase;
+  color:rgba(var(--text-rgb),.35);
+}
+.nav-breadcrumb a { color:var(--gold); text-decoration:none; transition:color .3s; }
+.nav-breadcrumb a:hover { color:var(--gold-light); }
+.nav-breadcrumb-sep { color:rgba(var(--text-rgb),.2); }
+.nav-breadcrumb-current { color:rgba(var(--text-rgb),.6); }
+
+/* links internos da página */
+.nav-links { display:flex; gap:28px; list-style:none; }
+.nav-links a { color:rgba(var(--text-rgb),.45); text-decoration:none; font-family:var(--sans); font-size:.73rem; letter-spacing:.1em; text-transform:uppercase; transition:color .3s; }
+.nav-links a:hover { color:var(--gold-light); }
+
+.nav-right { display:flex; align-items:center; gap:16px; }
+/* botão voltar — formato diferente da index */
+.nav-back {
+  display:flex; align-items:center; gap:8px;
+  background:transparent; border:1px solid rgba(var(--text-rgb),.12);
+  color:rgba(var(--text-rgb),.55); padding:8px 18px;
+  font-family:var(--sans); font-size:.7rem; letter-spacing:.1em; text-transform:uppercase;
+  text-decoration:none; transition:all .3s; border-radius:2px;
+}
+.nav-back:hover { border-color:rgba(201,168,76,.4); color:var(--gold); }
+.nav-back svg { transition:transform .3s; }
+.nav-back:hover svg { transform:translateX(-3px); }
+.nav-cta { background:var(--gold); border:none; color:#0a0a0a; padding:10px 24px; font-family:var(--sans); font-size:.73rem; letter-spacing:.1em; text-transform:uppercase; text-decoration:none; transition:all .3s; cursor:pointer; }
+.nav-cta:hover { background:var(--gold-light); transform:translateY(-1px); }
+
+/* Menu mobile toggle */
+.menu-toggle { display:none; flex-direction:column; justify-content:space-between; width:28px; height:18px; background:transparent; border:none; cursor:pointer; z-index:1201; position:relative; }
+.menu-toggle span { width:100%; height:1.5px; background:var(--gold); border-radius:2px; transition:all .4s cubic-bezier(.25,.8,.25,1); }
+.menu-toggle.active span:nth-child(1) { transform:rotate(-45deg) translate(0px, 8px); }
+.menu-toggle.active span:nth-child(2) { opacity:0; transform:translateX(16px); }
+.menu-toggle.active span:nth-child(3) { transform:rotate(45deg) translate(0px, -8px); }
+
+/* ── Drawer lateral (substituindo o bento) ── */
+.mobile-drawer {
+  position:fixed; top:0; right:0; bottom:0;
+  width:min(320px, 85vw);
+  background:var(--noir-2);
+  border-left:1px solid rgba(201,168,76,.15);
+  z-index:1200;
+  transform:translateX(100%);
+  transition:transform .45s cubic-bezier(.4,0,.2,1);
+  display:flex; flex-direction:column;
+  padding:80px 32px 40px;
+  gap:8px;
+}
+.mobile-drawer.active { transform:translateX(0); }
+.mobile-drawer-overlay {
+  position:fixed; inset:0;
+  background:rgba(var(--bg-rgb),.6);
+  backdrop-filter:blur(6px);
+  z-index:1199;
+  opacity:0; pointer-events:none;
+  transition:opacity .4s;
+}
+.mobile-drawer-overlay.active { opacity:1; pointer-events:auto; }
+
+.drawer-section-label {
+  font-family:var(--mono); font-size:.6rem; letter-spacing:.22em;
+  text-transform:uppercase; color:var(--gold);
+  padding:24px 0 12px; border-top:1px solid rgba(201,168,76,.1);
+  margin-top:8px;
+}
+.drawer-section-label:first-child { border-top:none; padding-top:0; margin-top:0; }
+.drawer-link {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 0;
+  text-decoration:none;
+  color:rgba(var(--text-rgb),.75);
+  font-family:var(--sans); font-size:.9rem;
+  border-bottom:1px solid rgba(var(--text-rgb),.05);
+  transition:color .25s;
+}
+.drawer-link:hover { color:var(--gold-light); }
+.drawer-link-arrow { color:rgba(201,168,76,.4); font-size:.8rem; }
+.drawer-cta {
+  margin-top:auto; padding-top:32px;
+  display:flex; flex-direction:column; gap:12px;
+}
+.drawer-wpp {
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  background:#25D366; color:#fff; padding:16px;
+  text-decoration:none; font-family:var(--sans);
+  font-size:.8rem; letter-spacing:.08em; text-transform:uppercase;
+  transition:all .3s;
+}
+.drawer-wpp:hover { background:#1db954; }
+.drawer-home {
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  background:transparent; border:1px solid rgba(201,168,76,.25);
+  color:var(--gold); padding:14px;
+  text-decoration:none; font-family:var(--sans);
+  font-size:.75rem; letter-spacing:.1em; text-transform:uppercase;
+  transition:all .3s;
+}
+.drawer-home:hover { background:rgba(201,168,76,.08); }
+
+/* bento-card mantido apenas para compatibilidade de script */
+.bento-card { text-decoration:none; display:block; }
+.bento-card.span-2 { grid-column:span 2; flex-direction:row; align-items:center; justify-content:flex-start; gap:16px; padding:28px 24px; }
+.bento-gold { background:linear-gradient(135deg,rgba(201,168,76,.15),rgba(201,168,76,.02)); border:1px solid rgba(201,168,76,.4); }
+.bento-gold .bento-icon { background:var(--gold); color:var(--noir); width:48px; height:48px; border-radius:14px; display:flex; align-items:center; justify-content:center; }
+.bento-gold h3 { font-family:var(--serif); font-size:1.3rem; color:var(--gold-light); margin-bottom:4px; line-height:1.1; }
+.bento-gold p { font-family:var(--sans); font-size:.75rem; color:rgba(var(--text-rgb),.7); }
+
+/* Floating buttons */
+.floating-wpp { position:fixed; bottom:30px; right:30px; width:60px; height:60px; background:#25D366; color:#FFF; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 10px 25px rgba(37,211,102,.3); z-index:900; transition:all .3s; cursor:pointer; text-decoration:none; }
+.floating-wpp:hover { transform:scale(1.1) translateY(-4px); box-shadow:0 15px 35px rgba(37,211,102,.4); }
+.theme-toggle { position:fixed; bottom:30px; left:30px; width:50px; height:50px; background:var(--noir-3); border:1px solid rgba(201,168,76,.3); border-radius:50%; color:var(--gold); display:flex; align-items:center; justify-content:center; cursor:pointer; z-index:900; transition:all .3s; }
+.theme-toggle:hover { background:var(--gold); color:var(--noir); transform:scale(1.1); }
+.sun-icon { display:none; }
+[data-theme="light"] .sun-icon { display:block; }
+[data-theme="light"] .moon-icon { display:none; }
+
+/* ══════════════════════════════════════════
+   LAYOUT UTILITIES
+══════════════════════════════════════════ */
+section { position:relative; overflow:hidden; }
+.container { max-width:1280px; margin:0 auto; padding:0 60px; }
+.section-eyebrow { font-size:.7rem; letter-spacing:.25em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:14px; margin-bottom:20px; }
+.section-eyebrow::before { content:''; display:inline-block; width:40px; height:1px; background:var(--gold); }
+.section-title { font-family:var(--serif); font-size:clamp(2rem,3.5vw,3.8rem); font-weight:700; line-height:1.1; }
+.section-title em { font-style:italic; font-weight:400; color:var(--gold-light); }
+.gold-divider { width:60px; height:1px; background:var(--gold); margin:32px 0; }
+
+/* ══════════════════════════════════════════
+   HERO — full-width editorial (página interna)
+══════════════════════════════════════════ */
+#hero {
+  min-height:100vh;
+  display:flex; flex-direction:column; align-items:center; justify-content:flex-end;
+  position:relative; overflow:hidden;
+  padding-bottom:0;
+}
+
+/* imagem de fundo com overlay */
+.hero-bg-img {
+  position:absolute; inset:0;
+  background:url('uploads/cfg_reg_hero_foto_69f11e9768499.png') center 20%/cover no-repeat;
+  z-index:0;
+}
+.hero-bg-img::after {
+  content:'';
+  position:absolute; inset:0;
+  background:
+    linear-gradient(to bottom, rgba(var(--bg-rgb),.55) 0%, rgba(var(--bg-rgb),.2) 30%, rgba(var(--bg-rgb),.85) 70%, var(--noir) 100%),
+    linear-gradient(to right, rgba(var(--bg-rgb),.3) 0%, transparent 50%);
+}
+
+/* watermark grande */
+.hero-watermark {
+  position:absolute; bottom:60px; right:-20px;
+  font-family:var(--serif); font-size:clamp(80px,12vw,160px); font-weight:900;
+  color:rgba(var(--text-rgb),.025); white-space:nowrap;
+  pointer-events:none; user-select:none; line-height:1; z-index:1;
+  letter-spacing:-.02em;
+}
+
+.hero-content {
+  position:relative; z-index:2;
+  width:100%; max-width:1280px;
+  padding:0 60px 100px;
+}
+
+/* tag de categoria */
+.hero-tag {
+  display:inline-flex; align-items:center; gap:10px;
+  background:rgba(201,168,76,.08); border:1px solid rgba(201,168,76,.25);
+  color:var(--gold); font-family:var(--mono); font-size:.65rem;
+  letter-spacing:.22em; text-transform:uppercase; padding:8px 16px;
+  margin-bottom:36px;
+  opacity:0; animation:fadeUp .7s .2s forwards;
+}
+.hero-tag-dot { width:5px; height:5px; background:var(--gold); border-radius:50%; box-shadow:0 0 6px var(--gold); animation:pulse-gold 2s infinite; }
+@keyframes pulse-gold { 0%{box-shadow:0 0 0 0 rgba(201,168,76,.4)} 70%{box-shadow:0 0 0 6px rgba(201,168,76,0)} 100%{box-shadow:0 0 0 0 rgba(201,168,76,0)} }
+
+.hero-h1 {
+  font-family:var(--serif);
+  font-size:clamp(3.2rem,7vw,8rem);
+  font-weight:700; line-height:.95;
+  margin-bottom:0;
+  opacity:0; animation:fadeUp .9s .4s forwards;
+  max-width:900px;
+}
+.hero-h1 em { font-style:italic; font-weight:400; color:var(--gold-light); display:block; }
+
+/* linha divisória + sub */
+.hero-sub-row {
+  display:grid; grid-template-columns:1fr auto;
+  align-items:end; gap:40px;
+  margin-top:44px; padding-top:44px;
+  border-top:1px solid rgba(201,168,76,.15);
+  opacity:0; animation:fadeUp .9s .65s forwards;
+}
+.hero-sub {
+  font-family:var(--serif2); font-size:1.2rem; font-weight:300;
+  color:rgba(var(--text-rgb),.65); line-height:1.65; max-width:520px;
+}
+.hero-actions { display:flex; gap:16px; align-items:center; flex-shrink:0; }
+.btn-primary { background:var(--gold); color:#0a0a0a; padding:16px 36px; font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; font-weight:500; text-decoration:none; display:inline-block; transition:all .35s; position:relative; overflow:hidden; border:none; cursor:pointer; }
+.btn-primary:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 8px 30px rgba(201,168,76,.3); }
+
+/* barra de serviços no rodapé do hero */
+.hero-services {
+  position:relative; z-index:2;
+  width:100%; background:rgba(var(--bg-rgb),.6);
+  border-top:1px solid rgba(201,168,76,.12);
+  backdrop-filter:blur(12px);
+  display:grid; grid-template-columns:repeat(3,1fr);
+  opacity:0; animation:fadeUp .9s .85s forwards;
+}
+.hero-service-item {
+  display:flex; align-items:center; gap:16px;
+  padding:28px 40px;
+  border-right:1px solid rgba(201,168,76,.1);
+  transition:background .3s;
+}
+.hero-service-item:last-child { border-right:none; }
+.hero-service-item:hover { background:rgba(201,168,76,.04); }
+.hero-service-icon {
+  width:40px; height:40px; flex-shrink:0;
+  border:1px solid rgba(201,168,76,.25);
+  display:flex; align-items:center; justify-content:center;
+  color:var(--gold);
+}
+.hero-service-label {
+  font-family:var(--sans); font-size:.7rem; letter-spacing:.1em;
+  text-transform:uppercase; color:rgba(var(--text-rgb),.4);
+  margin-bottom:4px;
+}
+.hero-service-name {
+  font-family:var(--serif); font-size:.95rem; font-weight:600;
+  color:var(--white); line-height:1.2;
+}
+
+/* ══════════════════════════════════════════
+   ÁREAS / RISCOS
+══════════════════════════════════════════ */
+#areas { background:var(--noir-2); padding:140px 0; }
+.areas-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+.areas-text p { font-family:var(--serif2); font-size:1.2rem; font-weight:300; color:rgba(var(--text-rgb),.75); line-height:1.85; margin-bottom:24px; }
+.areas-cards { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.area-card { background:var(--noir-3); border:1px solid rgba(201,168,76,.1); padding:32px 28px; position:relative; transition:all .4s; overflow:hidden; text-decoration:none; display:block; cursor:pointer; }
+.area-card::before { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--gold); transition:width .4s; }
+.area-card:hover { border-color:rgba(201,168,76,.3); transform:translateY(-4px); }
+.area-card:hover::before { width:100%; }
+.area-card h3 { font-family:var(--serif); font-size:1rem; font-weight:600; margin-bottom:10px; color:var(--white); }
+.area-card p { font-size:.82rem; color:var(--text-low); line-height:1.6; }
+.area-card-num { position:absolute; top:20px; right:20px; font-family:var(--serif); font-size:.8rem; color:rgba(201,168,76,.2); font-weight:700; }
+
+/* ══════════════════════════════════════════
+   SOBRE A DRA
+══════════════════════════════════════════ */
+#quem { padding:140px 0; background:var(--noir); border-bottom:1px solid rgba(201,168,76,.05); }
+.quem-inner { display:grid; grid-template-columns:4fr 7fr; gap:120px; align-items:center; }
+.quem-photo-frame { width:100%; aspect-ratio:3/4; border:1px solid rgba(201,168,76,.15); overflow:hidden; }
+.quem-photo-frame img { width:100%; height:100%; object-fit:cover; filter:grayscale(10%); transition:filter .5s; }
+.quem-photo-frame:hover img { filter:grayscale(0%); }
+.quem-title { font-family:var(--serif); font-size:clamp(2rem,3vw,3.2rem); font-weight:700; line-height:1.1; margin-bottom:24px; }
+.quem-title em { font-style:italic; font-weight:400; color:var(--gold-light); }
+.quem-bio { font-family:var(--serif2); font-size:1.15rem; font-weight:300; line-height:1.9; color:rgba(var(--text-rgb),.7); margin-bottom:30px; }
+
+/* ══════════════════════════════════════════
+   ★ ADJUDICAÇÃO COMPULSÓRIA — SEÇÃO NOVA
+══════════════════════════════════════════ */
+#adjudicacao {
+  background:var(--noir);
+  padding:160px 0 0;
+  position:relative;
+  overflow:visible;
+}
+
+/* linha dourada topo */
+#adjudicacao::before {
+  content:'';
+  position:absolute;
+  top:0; left:5%; right:5%;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  opacity:.3;
+}
+
+/* background radial suave */
+.adj-bg {
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(ellipse 60% 40% at 0% 50%, rgba(201,168,76,.06) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 100% 80%, rgba(201,168,76,.04) 0%, transparent 60%);
+  pointer-events:none;
+  z-index:0;
+}
+
+.adj-inner {
+  position:relative; z-index:1;
+}
+
+/* ── Topo: Eyebrow + Título ── */
+.adj-header {
+  text-align:center;
+  max-width:780px;
+  margin:0 auto 100px;
+}
+.adj-header .section-eyebrow {
+  justify-content:center;
+}
+.adj-header .section-eyebrow::before { display:none; }
+.adj-header .section-eyebrow::after {
+  content:'';
+  display:inline-block;
+  width:40px; height:1px;
+  background:var(--gold);
+}
+.adj-title {
+  font-family:var(--serif);
+  font-size:clamp(2.4rem,4.5vw,5rem);
+  font-weight:700;
+  line-height:1.05;
+  margin-bottom:28px;
+  color:var(--white);
+}
+.adj-title em {
+  font-style:italic;
+  font-weight:400;
+  color:var(--gold-light);
+  display:block;
+}
+.adj-header-sub {
+  font-family:var(--serif2);
+  font-size:1.25rem;
+  font-weight:300;
+  color:rgba(var(--text-rgb),.65);
+  line-height:1.8;
+  max-width:620px;
+  margin:0 auto;
+}
+
+/* ── O que é — bloco destaque ── */
+.adj-oque {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  border:1px solid rgba(201,168,76,.12);
+  margin-bottom:80px;
+  position:relative;
+  overflow:hidden;
+}
+.adj-oque::before {
+  content:'';
+  position:absolute;
+  top:0; left:0; right:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(201,168,76,.5),transparent);
+}
+.adj-oque-left {
+  padding:64px 56px;
+  background:linear-gradient(135deg,rgba(201,168,76,.08) 0%,rgba(201,168,76,.02) 100%);
+  border-right:1px solid rgba(201,168,76,.1);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+}
+.adj-oque-left::before {
+  content:'§';
+  position:absolute;
+  bottom:-20px; right:40px;
+  font-family:var(--serif);
+  font-size:160px;
+  font-weight:700;
+  color:rgba(201,168,76,.04);
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+}
+.adj-oque-eyebrow {
+  font-family:var(--mono);
+  font-size:.68rem;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:24px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.adj-oque-eyebrow::before {
+  content:'';
+  width:32px; height:1px;
+  background:var(--gold);
+  display:inline-block;
+}
+.adj-oque-titulo {
+  font-family:var(--serif);
+  font-size:clamp(1.8rem,2.5vw,2.8rem);
+  font-weight:700;
+  line-height:1.1;
+  color:var(--white);
+  margin-bottom:24px;
+}
+.adj-oque-titulo em {
+  font-style:italic;
+  font-weight:400;
+  color:var(--gold-light);
+}
+.adj-oque-texto {
+  font-family:var(--serif2);
+  font-size:1.1rem;
+  font-weight:300;
+  color:rgba(var(--text-rgb),.7);
+  line-height:1.9;
+  margin-bottom:36px;
+}
+.adj-legal-tag {
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:rgba(201,168,76,.06);
+  border:1px solid rgba(201,168,76,.2);
+  padding:10px 20px;
+  font-family:var(--mono);
+  font-size:.7rem;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--gold);
+}
+
+.adj-oque-right {
+  padding:56px 56px;
+  display:flex;
+  flex-direction:column;
+  gap:0;
+}
+
+/* Pilares numerados */
+.adj-pilar {
+  display:flex;
+  gap:28px;
+  align-items:flex-start;
+  padding:32px 0;
+  border-bottom:1px solid rgba(var(--text-rgb),.06);
+  position:relative;
+  transition:all .4s;
+}
+.adj-pilar:last-child { border-bottom:none; }
+.adj-pilar:hover { padding-left:8px; }
+
+.adj-pilar-num {
+  font-family:var(--serif);
+  font-size:2.2rem;
+  font-weight:700;
+  color:rgba(201,168,76,.18);
+  line-height:1;
+  flex-shrink:0;
+  width:44px;
+  text-align:right;
+  transition:color .4s;
+}
+.adj-pilar:hover .adj-pilar-num { color:rgba(201,168,76,.45); }
+
+.adj-pilar-body {}
+.adj-pilar-title {
+  font-family:var(--serif);
+  font-size:1.05rem;
+  font-weight:600;
+  color:var(--white);
+  margin-bottom:8px;
+  line-height:1.3;
+}
+.adj-pilar-desc {
+  font-family:var(--serif2);
+  font-size:.98rem;
+  font-weight:300;
+  color:rgba(var(--text-rgb),.6);
+  line-height:1.8;
+}
+
+/* ── Linha do tempo do processo ── */
+.adj-timeline-wrap {
+  margin-bottom:100px;
+}
+.adj-timeline-label {
+  text-align:center;
+  font-family:var(--mono);
+  font-size:.68rem;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:56px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:20px;
+}
+.adj-timeline-label::before,
+.adj-timeline-label::after {
+  content:'';
+  flex:1;
+  max-width:160px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold));
+}
+.adj-timeline-label::after {
+  background:linear-gradient(90deg,var(--gold),transparent);
+}
+
+.adj-timeline {
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:0;
+  position:relative;
+}
+
+/* linha horizontal conectora */
+.adj-timeline::before {
+  content:'';
+  position:absolute;
+  top:36px;
+  left:calc(10% + 18px);
+  right:calc(10% + 18px);
+  height:1px;
+  background:linear-gradient(90deg,var(--gold-line),var(--gold),var(--gold-line));
+  z-index:0;
+}
+
+.adj-step {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:0 16px;
+  position:relative;
+  z-index:1;
+}
+.adj-step-circle {
+  width:72px; height:72px;
+  border:1px solid rgba(201,168,76,.3);
+  border-radius:50%;
+  background:var(--noir);
+  display:flex; align-items:center; justify-content:center;
+  margin-bottom:20px;
+  position:relative;
+  transition:all .4s;
+}
+.adj-step-circle::before {
+  content:'';
+  position:absolute;
+  inset:-4px;
+  border-radius:50%;
+  border:1px solid transparent;
+  background:linear-gradient(135deg,rgba(201,168,76,.25),transparent) border-box;
+  -webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:destination-out;
+  mask-composite:exclude;
+  opacity:0;
+  transition:opacity .4s;
+}
+.adj-step:hover .adj-step-circle { background:rgba(201,168,76,.08); border-color:var(--gold); }
+.adj-step:hover .adj-step-circle::before { opacity:1; }
+
+.adj-step-num {
+  font-family:var(--mono);
+  font-size:.65rem;
+  letter-spacing:.15em;
+  color:var(--gold);
+  font-weight:400;
+}
+.adj-step-title {
+  font-family:var(--serif);
+  font-size:.9rem;
+  font-weight:600;
+  color:var(--white);
+  text-align:center;
+  margin-bottom:8px;
+  line-height:1.3;
+}
+.adj-step-desc {
+  font-family:var(--serif2);
+  font-size:.8rem;
+  font-weight:300;
+  color:rgba(var(--text-rgb),.5);
+  text-align:center;
+  line-height:1.6;
+}
+
+/* ── Banner "Você se encaixa?" ── */
+.adj-banner {
+  background:linear-gradient(135deg,rgba(201,168,76,.1) 0%,rgba(201,168,76,.03) 50%,rgba(201,168,76,.08) 100%);
+  border:1px solid rgba(201,168,76,.2);
+  padding:64px 80px;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:60px;
+  align-items:center;
+  margin-bottom:0;
+  position:relative;
+  overflow:hidden;
+}
+.adj-banner::before {
+  content:'';
+  position:absolute;
+  top:0; left:0; right:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  opacity:.5;
+}
+.adj-banner::after {
+  content:'Adjudicação';
+  position:absolute;
+  right:-20px; top:50%;
+  transform:translateY(-50%);
+  font-family:var(--serif);
+  font-size:100px;
+  font-weight:700;
+  color:rgba(201,168,76,.04);
+  pointer-events:none;
+  white-space:nowrap;
+}
+
+.adj-banner-checklist {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+}
+.adj-check-item {
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  padding:18px 0;
+  border-bottom:1px solid rgba(var(--text-rgb),.05);
+}
+.adj-check-item:nth-child(odd) { padding-right:40px; border-right:1px solid rgba(var(--text-rgb),.05); }
+.adj-check-item:nth-child(even) { padding-left:40px; }
+.adj-check-item:nth-last-child(-n+2) { border-bottom:none; }
+
+.adj-check-icon {
+  width:32px; height:32px;
+  border:1px solid rgba(201,168,76,.3);
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+  margin-top:2px;
+}
+.adj-check-icon svg { color:var(--gold); }
+.adj-check-text {}
+.adj-check-title {
+  font-family:var(--serif);
+  font-size:.95rem;
+  font-weight:600;
+  color:var(--white);
+  margin-bottom:4px;
+}
+.adj-check-desc {
+  font-family:var(--serif2);
+  font-size:.9rem;
+  font-weight:300;
+  color:rgba(var(--text-rgb),.55);
+  line-height:1.6;
+}
+
+.adj-banner-cta {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:20px;
+  flex-shrink:0;
+}
+.adj-banner-cta-label {
+  font-family:var(--mono);
+  font-size:.68rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--gold);
+  text-align:right;
+}
+.adj-cta-btn {
+  display:inline-flex;
+  align-items:center;
+  gap:14px;
+  background:var(--gold);
+  color:#0a0a0a;
+  padding:20px 40px;
+  font-size:.8rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  font-weight:600;
+  text-decoration:none;
+  transition:all .35s;
+  white-space:nowrap;
+}
+.adj-cta-btn:hover {
+  background:var(--gold-light);
+  transform:translateY(-3px);
+  box-shadow:0 12px 40px rgba(201,168,76,.35);
+}
+.adj-cta-btn svg { flex-shrink:0; }
+
+/* ══════════════════════════════════════════
+   ★ FAQ — ADJUDICAÇÃO COMPULSÓRIA (NOVO)
+══════════════════════════════════════════ */
+#faq-adj {
+  background:var(--noir-2);
+  padding:160px 0;
+  position:relative;
+  overflow:hidden;
+}
+
+/* Decoração background */
+#faq-adj::before {
+  content:'FAQ';
+  position:absolute;
+  right:-40px; top:50%;
+  transform:translateY(-50%) rotate(90deg);
+  font-family:var(--serif);
+  font-size:280px;
+  font-weight:700;
+  color:rgba(201,168,76,.025);
+  pointer-events:none;
+  line-height:1;
+  letter-spacing:-.04em;
+}
+
+.faq-adj-inner {
+  display:grid;
+  grid-template-columns:5fr 7fr;
+  gap:100px;
+  align-items:start;
+  position:relative;
+  z-index:1;
+}
+
+.faq-adj-sticky {
+  position:sticky;
+  top:100px;
+}
+.faq-adj-sticky .section-eyebrow {
+  margin-bottom:24px;
+}
+.faq-adj-subtitle {
+  font-family:var(--serif2);
+  font-size:1.1rem;
+  font-weight:300;
+  color:rgba(var(--text-rgb),.6);
+  line-height:1.75;
+  margin-bottom:40px;
+  margin-top:16px;
+}
+
+/* Contador de dúvidas */
+.faq-adj-count {
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 20px;
+  border:1px solid rgba(201,168,76,.15);
+  background:rgba(201,168,76,.04);
+  margin-bottom:36px;
+}
+.faq-adj-count-num {
+  font-family:var(--serif);
+  font-size:2rem;
+  font-weight:700;
+  color:var(--gold);
+  line-height:1;
+}
+.faq-adj-count-label {
+  font-family:var(--sans);
+  font-size:.72rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:rgba(var(--text-rgb),.5);
+  line-height:1.3;
+}
+
+/* Lista de perguntas */
+.faq-adj-list {
+  display:flex;
+  flex-direction:column;
+}
+
+.faq-adj-item {
+  border-bottom:1px solid rgba(var(--text-rgb),.07);
+  overflow:hidden;
+  position:relative;
+}
+.faq-adj-item::before {
+  content:'';
+  position:absolute;
+  left:0; top:0; bottom:0;
+  width:2px;
+  background:var(--gold);
+  transform:scaleY(0);
+  transform-origin:bottom;
+  transition:transform .4s ease;
+}
+.faq-adj-item.open::before {
+  transform:scaleY(1);
+}
+
+.faq-adj-q {
+  width:100%;
+  background:none;
+  border:none;
+  padding:28px 0 28px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:24px;
+  text-align:left;
+  cursor:pointer;
+}
+
+.faq-adj-q-inner {
+  display:flex;
+  align-items:flex-start;
+  gap:20px;
+  flex:1;
+  min-width:0;
+}
+
+.faq-adj-q-num {
+  font-family:var(--mono);
+  font-size:.65rem;
+  color:rgba(201,168,76,.4);
+  letter-spacing:.1em;
+  flex-shrink:0;
+  padding-top:4px;
+  transition:color .3s;
+}
+.faq-adj-item.open .faq-adj-q-num,
+.faq-adj-q:hover .faq-adj-q-num {
+  color:var(--gold);
+}
+
+.faq-adj-q-text {
+  font-family:var(--serif);
+  font-size:1.05rem;
+  font-weight:600;
+  color:var(--white);
+  line-height:1.45;
+  transition:color .3s;
+}
+.faq-adj-q:hover .faq-adj-q-text { color:var(--gold-light); }
+.faq-adj-item.open .faq-adj-q-text { color:var(--gold-light); }
+
+.faq-adj-icon {
+  width:32px; height:32px;
+  border:1px solid rgba(201,168,76,.25);
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+  color:var(--gold);
+  transition:all .35s;
+  margin-top:2px;
+}
+.faq-adj-item.open .faq-adj-icon {
+  background:var(--gold);
+  color:var(--noir);
+  border-color:var(--gold);
+  transform:rotate(45deg);
+}
+
+.faq-adj-a {
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .55s cubic-bezier(.4,0,.2,1);
+}
+.faq-adj-item.open .faq-adj-a {
+  max-height:800px;
+  transition:max-height .65s ease-in-out;
+}
+
+.faq-adj-a-inner {
+  padding:0 0 32px 64px;
+  font-family:var(--serif2);
+  font-size:1.05rem;
+  font-weight:300;
+  color:rgba(var(--text-rgb),.65);
+  line-height:1.9;
+}
+
+/* Destaque dentro do corpo da resposta */
+.faq-adj-a-inner strong {
+  color:var(--white);
+  font-weight:500;
+}
+.faq-adj-a-inner .faq-tag {
+  display:inline-block;
+  background:rgba(201,168,76,.08);
+  border:1px solid rgba(201,168,76,.2);
+  color:var(--gold);
+  font-family:var(--mono);
+  font-size:.65rem;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  padding:3px 10px;
+  margin-top:14px;
+}
+
+/* CTA dentro do FAQ */
+.faq-adj-cta-block {
+  margin-top:48px;
+  padding:32px;
+  border:1px solid rgba(201,168,76,.15);
+  background:rgba(201,168,76,.04);
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  position:relative;
+  overflow:hidden;
+}
+.faq-adj-cta-block::before {
+  content:'';
+  position:absolute;
+  top:0; left:0; right:0; height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  opacity:.4;
+}
+.faq-adj-cta-title {
+  font-family:var(--serif);
+  font-size:1.35rem;
+  font-weight:600;
+  color:var(--white);
+}
+.faq-adj-cta-title em {
+  font-style:italic;
+  color:var(--gold-light);
+  font-weight:400;
+}
+.faq-adj-cta-sub {
+  font-family:var(--serif2);
+  font-size:.95rem;
+  color:rgba(var(--text-rgb),.6);
+  line-height:1.7;
+}
+
+/* ══════════════════════════════════════════
+   FAQ USUCAPIÃO (ORIGINAL — mantido)
+══════════════════════════════════════════ */
+#faq { background:var(--noir); padding:140px 0; }
+.faq-inner { display:grid; grid-template-columns:4fr 8fr; gap:100px; align-items:start; }
+.faq-sticky { position:sticky; top:100px; }
+.faq-list { display:flex; flex-direction:column; }
+.faq-item { border-bottom:1px solid rgba(var(--text-rgb),.07); overflow:hidden; }
+.faq-q { width:100%; background:none; border:none; padding:28px 0; display:flex; justify-content:space-between; align-items:flex-start; gap:24px; text-align:left; cursor:pointer; }
+.faq-q-text { font-family:var(--serif); font-size:1.05rem; font-weight:600; color:var(--white); line-height:1.4; transition:color .3s; }
+.faq-q:hover .faq-q-text { color:var(--gold-light); }
+.faq-icon { width:28px; height:28px; min-width:28px; border:1px solid rgba(201,168,76,.3); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--gold); transition:all .3s; }
+.faq-item.open .faq-icon { background:var(--gold); color:var(--noir); transform:rotate(45deg); }
+.faq-a { max-height:0; overflow:hidden; transition:max-height .5s ease; }
+.faq-item.open .faq-a { max-height:800px; transition:max-height .6s ease-in-out; }
+.faq-a-inner { padding-bottom:28px; font-family:var(--serif2); font-size:1rem; font-weight:300; color:rgba(var(--text-rgb),.65); line-height:1.85; }
+
+/* ══════════════════════════════════════════
+   SEÇÃO USUCAPIÃO — TIPOS (nova)
+══════════════════════════════════════════ */
+#usu-tipos {
+  background:var(--noir-2);
+  padding:140px 0;
+  position:relative;
+  overflow:hidden;
+}
+#usu-tipos::before {
+  content:'';
+  position:absolute; top:0; left:5%; right:5%; height:1px;
+  background:linear-gradient(90deg,transparent,rgba(201,168,76,.2),transparent);
+}
+.usu-header {
+  text-align:center; max-width:700px; margin:0 auto 80px;
+}
+.usu-header .section-eyebrow { justify-content:center; }
+.usu-header .section-eyebrow::before { display:none; }
+.usu-header .section-eyebrow::after { content:''; display:inline-block; width:40px; height:1px; background:var(--gold); }
+
+.usu-tipos-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2px;
+  margin-bottom:80px;
+}
+.usu-tipo-card {
+  background:var(--noir-3);
+  padding:44px 36px;
+  position:relative;
+  overflow:hidden;
+  transition:background .4s;
+  border:1px solid rgba(201,168,76,.06);
+}
+.usu-tipo-card:hover { background:var(--noir-4); }
+.usu-tipo-card::after {
+  content:'';
+  position:absolute; bottom:0; left:0; right:0; height:2px;
+  background:var(--gold);
+  transform:scaleX(0); transform-origin:left;
+  transition:transform .4s;
+}
+.usu-tipo-card:hover::after { transform:scaleX(1); }
+.usu-tipo-num {
+  font-family:var(--serif); font-size:3rem; font-weight:700;
+  color:rgba(201,168,76,.1); line-height:1; margin-bottom:20px;
+}
+.usu-tipo-name {
+  font-family:var(--serif); font-size:1.15rem; font-weight:700;
+  color:var(--white); margin-bottom:8px;
+}
+.usu-tipo-prazo {
+  display:inline-flex; align-items:center; gap:6px;
+  font-family:var(--mono); font-size:.63rem; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--gold);
+  background:rgba(201,168,76,.06); border:1px solid rgba(201,168,76,.2);
+  padding:4px 10px; margin-bottom:18px;
+}
+.usu-tipo-desc {
+  font-family:var(--serif2); font-size:.95rem; font-weight:300;
+  color:rgba(var(--text-rgb),.6); line-height:1.8;
+}
+.usu-tipo-req {
+  margin-top:20px; padding-top:20px;
+  border-top:1px solid rgba(var(--text-rgb),.06);
+  display:flex; flex-direction:column; gap:8px;
+}
+.usu-tipo-req-item {
+  display:flex; align-items:flex-start; gap:10px;
+  font-family:var(--sans); font-size:.78rem;
+  color:rgba(var(--text-rgb),.55); line-height:1.5;
+}
+.usu-tipo-req-item::before {
+  content:'—'; color:var(--gold); flex-shrink:0; font-weight:700;
+  font-size:.7rem; margin-top:1px;
+}
+
+/* bloco comparativo */
+.usu-vs-block {
+  display:grid; grid-template-columns:1fr 1fr; gap:0;
+  border:1px solid rgba(201,168,76,.12);
+  overflow:hidden;
+}
+.usu-vs-col {
+  padding:56px 48px;
+}
+.usu-vs-col:first-child {
+  border-right:1px solid rgba(201,168,76,.1);
+  background:linear-gradient(135deg,rgba(201,168,76,.05),transparent);
+}
+.usu-vs-title {
+  font-family:var(--serif); font-size:1.5rem; font-weight:700;
+  color:var(--white); margin-bottom:8px; line-height:1.2;
+}
+.usu-vs-title em { color:var(--gold-light); font-style:italic; font-weight:400; }
+.usu-vs-sub {
+  font-family:var(--serif2); font-size:.95rem;
+  color:rgba(var(--text-rgb),.5); margin-bottom:32px; line-height:1.6;
+}
+.usu-vs-list { display:flex; flex-direction:column; gap:0; }
+.usu-vs-item {
+  display:flex; gap:16px; align-items:flex-start;
+  padding:16px 0; border-bottom:1px solid rgba(var(--text-rgb),.06);
+}
+.usu-vs-item:last-child { border-bottom:none; }
+.usu-vs-icon {
+  width:32px; height:32px; min-width:32px;
+  border:1px solid rgba(201,168,76,.2);
+  display:flex; align-items:center; justify-content:center;
+  color:var(--gold); flex-shrink:0;
+}
+.usu-vs-item-text { font-family:var(--sans); font-size:.82rem; color:rgba(var(--text-rgb),.65); line-height:1.55; }
+.usu-vs-item-text strong { color:var(--white); font-weight:500; display:block; margin-bottom:2px; }
+
+/* ══════════════════════════════════════════
+   SEÇÃO USUCAPIÃO — REQUISITOS LEGAIS (nova)
+══════════════════════════════════════════ */
+#usu-requisitos {
+  background:var(--noir);
+  padding:140px 0;
+  position:relative;
+}
+.usu-req-grid {
+  display:grid; grid-template-columns:5fr 7fr; gap:100px; align-items:start;
+}
+.usu-req-sticky {
+  position:sticky; top:120px;
+}
+.usu-lei-tag {
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:var(--mono); font-size:.62rem; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--gold);
+  border:1px solid rgba(201,168,76,.2); padding:8px 14px;
+  margin-bottom:28px;
+}
+.usu-req-list { display:flex; flex-direction:column; gap:0; }
+.usu-req-item {
+  display:grid; grid-template-columns:auto 1fr;
+  gap:0; border-bottom:1px solid rgba(var(--text-rgb),.07);
+  overflow:hidden; transition:background .3s;
+}
+.usu-req-item:hover { background:rgba(201,168,76,.02); }
+.usu-req-num-col {
+  padding:28px 24px 28px 0;
+  font-family:var(--serif); font-size:1.6rem; font-weight:700;
+  color:rgba(201,168,76,.15); width:56px; flex-shrink:0; line-height:1;
+  transition:color .3s;
+}
+.usu-req-item:hover .usu-req-num-col { color:rgba(201,168,76,.4); }
+.usu-req-body { padding:28px 0; }
+.usu-req-title {
+  font-family:var(--serif); font-size:1rem; font-weight:600;
+  color:var(--white); margin-bottom:6px; line-height:1.3;
+}
+.usu-req-desc {
+  font-family:var(--serif2); font-size:.92rem; font-weight:300;
+  color:rgba(var(--text-rgb),.55); line-height:1.75;
+}
+.usu-alerta {
+  margin-top:40px; padding:24px 28px;
+  background:rgba(201,168,76,.05); border-left:3px solid var(--gold);
+}
+.usu-alerta-text {
+  font-family:var(--serif2); font-size:.95rem;
+  color:rgba(var(--text-rgb),.65); line-height:1.7;
+}
+.usu-alerta-text strong { color:var(--gold); font-weight:500; }
+
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+#contato { background:var(--noir); padding:120px 0 40px; position:relative; overflow:hidden; border-top:1px solid rgba(201,168,76,.1); }
+.contato-bg { position:absolute; inset:0; background:radial-gradient(circle at 80% 100%,rgba(201,168,76,.08) 0%,transparent 60%); z-index:0; }
+.contato-inner { position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; margin-bottom:80px; }
+.contato-title { font-family:var(--serif); font-size:clamp(2rem,4vw,4.5rem); font-weight:700; line-height:1.05; margin-bottom:24px; }
+.contato-title em { font-style:italic; font-weight:400; color:var(--gold-light); }
+.contato-sub { font-family:var(--serif2); font-size:1.15rem; color:rgba(var(--text-rgb),.65); line-height:1.7; margin-bottom:40px; }
+.contato-btn { display:inline-flex; align-items:center; gap:12px; background:linear-gradient(135deg,var(--gold-light),var(--gold)); color:#0a0a0a; padding:18px 40px; font-size:.82rem; letter-spacing:.08em; text-transform:uppercase; font-weight:600; text-decoration:none; transition:all .4s; }
+.contato-btn:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(201,168,76,.3); }
+.contato-info { display:grid; grid-template-columns:1fr; gap:32px; border-left:1px solid rgba(201,168,76,.15); padding-left:60px; }
+.info-block h4 { font-family:var(--sans); font-size:.72rem; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-bottom:14px; }
+.info-block p,.info-block a { font-family:var(--sans); font-size:.92rem; color:rgba(var(--text-rgb),.7); line-height:1.7; text-decoration:none; }
+.footer-divider { width:100%; height:1px; background:linear-gradient(to right,rgba(201,168,76,.05),rgba(201,168,76,.3),rgba(201,168,76,.05)); margin-bottom:36px; }
+.footer-bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; }
+.footer-logo-wrap { display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+.footer-img { height:55px; width:auto; }
+.footer-oab { font-family:var(--sans); font-size:.72rem; color:rgba(var(--text-rgb),.5); letter-spacing:.1em; text-transform:uppercase; border-left:1px solid rgba(201,168,76,.3); padding-left:20px; }
+.footer-copy { font-size:.78rem; color:rgba(var(--text-rgb),.5); }
+
+/* ══════════════════════════════════════════
+   REVEAL & ANIMATIONS
+══════════════════════════════════════════ */
+.reveal { opacity:0; transform:translateY(30px); transition:opacity .8s ease,transform .8s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+.reveal-delay-1 { transition-delay:.1s; }
+.reveal-delay-2 { transition-delay:.2s; }
+.reveal-delay-3 { transition-delay:.3s; }
+.reveal-delay-4 { transition-delay:.4s; }
+.reveal-delay-5 { transition-delay:.5s; }
+
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media(max-width:1024px){
+  nav { padding:16px 24px; }
+  .nav-breadcrumb,.nav-links,.nav-back,.nav-cta { display:none; }
+  .menu-toggle { display:flex; }
+  .container { padding:0 32px; }
+  /* hero */
+  .hero-content { padding:0 32px 80px; }
+  .hero-watermark { display:none; }
+  .hero-h1 { font-size:clamp(2.8rem,8vw,5rem); }
+  .hero-sub-row { grid-template-columns:1fr; gap:28px; }
+  .hero-services { grid-template-columns:1fr; }
+  .hero-service-item { border-right:none; border-bottom:1px solid rgba(201,168,76,.1); }
+  .hero-service-item:last-child { border-bottom:none; }
+  /* areas */
+  .areas-grid { grid-template-columns:1fr; gap:48px; }
+  .areas-cards { grid-template-columns:1fr 1fr; }
+  /* quem */
+  .quem-inner { grid-template-columns:1fr; gap:48px; }
+  /* faq usucapião — empilha sticky acima da lista */
+  .faq-inner { grid-template-columns:1fr; gap:40px; }
+  .faq-sticky { position:static; top:auto; }
+  /* usu-tipos */
+  .usu-tipos-grid { grid-template-columns:1fr 1fr; }
+  .usu-vs-block { grid-template-columns:1fr; }
+  .usu-vs-col:first-child { border-right:none; border-bottom:1px solid rgba(201,168,76,.1); }
+  /* usu-requisitos */
+  .usu-req-grid { grid-template-columns:1fr; gap:48px; }
+  .usu-req-sticky { position:static; top:auto; }
+  /* contato */
+  .contato-inner { grid-template-columns:1fr; gap:48px; }
+  .contato-info { border-left:none; padding-left:0; border-top:1px solid rgba(201,168,76,.15); padding-top:48px; }
+  .footer-bottom { flex-direction:column; align-items:flex-start; gap:20px; }
+  /* adjudicação */
+  .adj-oque { grid-template-columns:1fr; }
+  .adj-oque-left { border-right:none; border-bottom:1px solid rgba(201,168,76,.1); }
+  .adj-timeline { grid-template-columns:1fr; gap:32px; }
+  .adj-timeline::before { display:none; }
+  .adj-step { flex-direction:row; align-items:flex-start; gap:20px; }
+  .adj-step-circle { flex-shrink:0; margin-bottom:0; }
+  .adj-banner { grid-template-columns:1fr; gap:40px; padding:48px 32px; }
+  .adj-banner-cta { align-items:flex-start; }
+  .adj-banner-checklist { grid-template-columns:1fr; }
+  .adj-check-item:nth-child(odd) { padding-right:0; border-right:none; }
+  .adj-check-item:nth-child(even) { padding-left:0; }
+  .faq-adj-inner { grid-template-columns:1fr; gap:48px; }
+  .faq-adj-sticky { position:static; }
+  .faq-adj-a-inner { padding-left:44px; }
+}
+
+@media(max-width:640px){
+  .container { padding:0 20px; }
+  nav { padding:14px 20px; }
+  /* hero */
+  .hero-content { padding:0 20px 56px; }
+  .hero-h1 { font-size:clamp(2rem,9vw,3.2rem); }
+  .hero-sub { font-size:.95rem; }
+  .hero-tag { font-size:.58rem; padding:6px 12px; }
+  .hero-service-item { padding:16px 20px; }
+  .hero-service-icon { width:34px; height:34px; }
+  .hero-service-label { font-size:.6rem; }
+  .hero-service-name { font-size:.85rem; }
+  /* areas */
+  .areas-cards { grid-template-columns:1fr; }
+  /* usu-tipos */
+  #usu-tipos { padding:80px 0; }
+  .usu-tipos-grid { grid-template-columns:1fr; }
+  .usu-tipo-card { padding:28px 20px; }
+  .usu-vs-block { border:none; border-top:1px solid rgba(201,168,76,.12); }
+  .usu-vs-col { padding:32px 20px; }
+  /* usu-requisitos */
+  #usu-requisitos { padding:80px 0; }
+  .usu-req-num-col { width:40px; font-size:1.2rem; padding:20px 12px 20px 0; }
+  .usu-req-body { padding:20px 0; }
+  .usu-alerta { padding:20px; }
+  /* faq */
+  #faq { padding:80px 0; }
+  .faq-q { padding:18px 0; gap:12px; }
+  .faq-q-text { font-size:.92rem; }
+  .faq-icon { width:24px; height:24px; min-width:24px; }
+  /* adjudicação */
+  .adj-oque-left { padding:32px 20px; }
+  .adj-oque-right { padding:28px 20px; }
+  .adj-banner { padding:32px 20px; }
+  .faq-adj-a-inner { padding-left:12px; }
+  #adjudicacao { padding:80px 0 0; }
+  #faq-adj { padding:80px 0; }
+  .adj-header { margin-bottom:48px; }
+  .adj-header .section-title { font-size:2rem; }
+  /* contato */
+  #contato { padding:80px 0 40px; }
+  .contato-sub { font-size:1rem; }
+  .contato-btn { padding:15px 24px; font-size:.76rem; width:100%; justify-content:center; }
+  /* footer */
+  .footer-logo-wrap { flex-direction:column; align-items:flex-start; gap:10px; }
+  .footer-oab { border-left:none; padding-left:0; border-top:1px solid rgba(201,168,76,.2); padding-top:10px; }
+  .footer-bottom { gap:16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV — página interna -->
+<nav id="navbar">
+  <a href="/" class="nav-logo"><img src="https://i.imgur.com/HKnZY51.png" alt="Dra. Dayana Gonçalves" class="logo-img"></a>
+
+  <div class="nav-breadcrumb">
+    <a href="/">Leilões</a>
+    <span class="nav-breadcrumb-sep">›</span>
+    <span class="nav-breadcrumb-current">Regularização</span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="#areas">Riscos</a></li>
+    <li><a href="#adjudicacao">Adjudicação</a></li>
+    <li><a href="#usu-tipos">Usucapião</a></li>
+    <li><a href="#faq-adj">FAQ</a></li>
+    <li><a href="#quem">Sobre</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <a href="/" class="nav-back">
+      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      Voltar
+    </a>
+    <a href="https://wa.me/5566999155486?text=Ol%C3%A1%2C+Dra.+Dayana.+Gostaria+de+entender+mais+sobre+Usucapi%C3%A3o+e+Regulariza%C3%A7%C3%A3o+do+meu+im%C3%B3vel." target="_blank" class="nav-cta">Falar com a Dra.</a>
+    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- DRAWER LATERAL (menu mobile) -->
+<div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="drawer-section-label">Nesta Página</div>
+  <a href="#areas" class="drawer-link bento-card">Riscos do imóvel irregular <span class="drawer-link-arrow">›</span></a>
+  <a href="#adjudicacao" class="drawer-link bento-card">Adjudicação Compulsória <span class="drawer-link-arrow">›</span></a>
+  <a href="#usu-tipos" class="drawer-link bento-card">Tipos de Usucapião <span class="drawer-link-arrow">›</span></a>
+  <a href="#usu-requisitos" class="drawer-link bento-card">Requisitos Legais <span class="drawer-link-arrow">›</span></a>
+  <a href="#faq-adj" class="drawer-link bento-card">Perguntas sobre Adjudicação <span class="drawer-link-arrow">›</span></a>
+  <a href="#faq" class="drawer-link bento-card">FAQ Usucapião <span class="drawer-link-arrow">›</span></a>
+  <a href="#quem" class="drawer-link bento-card">Sobre a Dra. <span class="drawer-link-arrow">›</span></a>
+
+  <div class="drawer-cta">
+    <a href="https://wa.me/5566999155486?text=Ol%C3%A1%2C+Dra.+Dayana.+Gostaria+de+entender+mais+sobre+Usucapi%C3%A3o+e+Regulariza%C3%A7%C3%A3o+do+meu+im%C3%B3vel." target="_blank" class="drawer-wpp">
+      <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.555 4.122 1.528 5.854L.057 23.142a.5.5 0 00.611.648l5.457-1.431A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.917a9.923 9.923 0 01-5.065-1.385l-.363-.215-3.767.988 1.007-3.669-.236-.377A9.917 9.917 0 012.083 12C2.083 6.514 6.514 2.083 12 2.083S21.917 6.514 21.917 12 17.486 21.917 12 21.917z"/></svg>
+      Falar com a Dra.
+    </a>
+    <a href="/" class="drawer-home">
+      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      Voltar para Leilões
+    </a>
+  </div>
+</div>
+
+<!-- ══════════════════ HERO EDITORIAL ══════════════════ -->
+<section id="hero">
+  <div class="hero-bg-img"></div>
+  <div class="hero-watermark">REGULARIZAÇÃO</div>
+
+  <div class="hero-content">
+    <div class="hero-tag">
+      <span class="hero-tag-dot"></span>
+      Direito Imobiliário &amp; Regularização    </div>
+    <h1 class="hero-h1">
+      Um imóvel irregular<br>
+      <em>não é de fato seu.</em>
+    </h1>
+    <div class="hero-sub-row">
+      <p class="hero-sub">Proteja seu patrimônio, valorize seu imóvel e garanta a segurança da sua família através da Usucapião e Regularização de Imóveis.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5566999155486?text=Ol%C3%A1%2C+Dra.+Dayana.+Gostaria+de+entender+mais+sobre+Usucapi%C3%A3o+e+Regulariza%C3%A7%C3%A3o+do+meu+im%C3%B3vel." target="_blank" class="btn-primary">Regularizar meu imóvel</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-services">
+    <div class="hero-service-item">
+      <div class="hero-service-icon">
+        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+      </div>
+      <div>
+        <div class="hero-service-label">Instrumento Jurídico</div>
+        <div class="hero-service-name">Adjudicação Compulsória</div>
+      </div>
+    </div>
+    <div class="hero-service-item">
+      <div class="hero-service-icon">
+        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+      </div>
+      <div>
+        <div class="hero-service-label">Posse prolongada</div>
+        <div class="hero-service-name">Usucapião</div>
+      </div>
+    </div>
+    <div class="hero-service-item">
+      <div class="hero-service-icon">
+        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+      </div>
+      <div>
+        <div class="hero-service-label">Documentação</div>
+        <div class="hero-service-name">Regularização Imobiliária</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ RISCOS ══════════════════ -->
+<section id="areas">
+  <div class="container">
+    <div class="areas-grid">
+      <div class="areas-text reveal">
+        <div class="section-eyebrow">Por que Regularizar?</div>
+        <h2 class="section-title">Os riscos do imóvel<br><em>sem escritura.</em></h2>
+        <div class="gold-divider"></div>
+        <p>A falta da escritura pública registrada no cartório traz diversos transtornos financeiros e jurídicos. É um risco invisível que pode custar caro para você e sua família no futuro.</p>
+      </div>
+      <div class="areas-cards reveal reveal-delay-2">
+                <div class="area-card">
+          <span class="area-card-num">01</span>
+          <svg width="40" height="40" fill="none" viewBox="0 0 40 40" stroke="rgba(201,168,76,0.7)" stroke-width="1.5" style="margin-bottom:20px"><path d="M20 4L4 16v22h32V16z"/><rect x="14" y="24" width="12" height="14"/></svg>
+          <h3>Desvalorização de Mercado</h3><p>Um imóvel irregular chega a perder até 40% do seu valor real na hora da venda por afastar bons compradores.</p>
+        </div>
+                <div class="area-card">
+          <span class="area-card-num">02</span>
+          <svg width="40" height="40" fill="none" viewBox="0 0 40 40" stroke="rgba(201,168,76,0.7)" stroke-width="1.5" style="margin-bottom:20px"><path d="M20 4L4 16v22h32V16z"/><rect x="14" y="24" width="12" height="14"/></svg>
+          <h3>Impossibilidade de Financiamento</h3><p>Bancos exigem documentação perfeita. Sem a matrícula regular, você perde compradores que dependem de crédito.</p>
+        </div>
+                <div class="area-card">
+          <span class="area-card-num">03</span>
+          <svg width="40" height="40" fill="none" viewBox="0 0 40 40" stroke="rgba(201,168,76,0.7)" stroke-width="1.5" style="margin-bottom:20px"><path d="M20 4L4 16v22h32V16z"/><rect x="14" y="24" width="12" height="14"/></svg>
+          <h3>Riscos de Herança e Partilha</h3><p>Deixar imóveis irregulares para os herdeiros é gerar anos de litígios e custos altíssimos de inventário no futuro.</p>
+        </div>
+                <div class="area-card">
+          <span class="area-card-num">04</span>
+          <svg width="40" height="40" fill="none" viewBox="0 0 40 40" stroke="rgba(201,168,76,0.7)" stroke-width="1.5" style="margin-bottom:20px"><path d="M20 4L4 16v22h32V16z"/><rect x="14" y="24" width="12" height="14"/></svg>
+          <h3>Risco de Perda</h3><p>Dependendo da situação do imóvel, você pode perder seus direitos para terceiros ou sofrer ações de reintegração.</p>
+        </div>
+              </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ ADJUDICAÇÃO COMPULSÓRIA ══════════════════ -->
+<section id="adjudicacao">
+  <div class="adj-bg"></div>
+
+  <div class="container">
+    <div class="adj-inner">
+
+      <!-- Header centralizado -->
+      <div class="adj-header reveal">
+        <div class="section-eyebrow">Instrumento Jurídico</div>
+        <h2 class="adj-title">
+          Adjudicação<br>
+          <em>Compulsória</em>
+        </h2>
+        <p class="adj-header-sub">
+          Quando o comprador cumpre sua parte mas o vendedor não — a lei garante que a propriedade ainda pode ser sua. Conheça o caminho jurídico que protege quem pagou.        </p>
+      </div>
+
+      <!-- O que é + Pilares -->
+      <div class="adj-oque reveal">
+        <div class="adj-oque-left">
+          <div class="adj-oque-eyebrow">Definição Legal</div>
+          <h3 class="adj-oque-titulo">
+            O que é a<br><em>Adjudicação Compulsória?</em>
+          </h3>
+          <p class="adj-oque-texto">
+            É a ação judicial utilizada quando o comprador quitou integralmente o imóvel, mas o vendedor — por má-fé, desaparecimento, falecimento ou simples recusa — se nega a assinar a escritura definitiva de transferência.          </p>
+          <p class="adj-oque-texto">
+            Com base no contrato de compra e venda e na comprovação do pagamento, o juiz pode determinar a transferência forçada da propriedade, substituindo a vontade do vendedor pela sentença judicial.          </p>
+          <div class="adj-legal-tag">
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            Art. 1.418 do Código Civil Brasileiro
+          </div>
+        </div>
+
+        <div class="adj-oque-right">
+          <div class="adj-pilar reveal">
+            <div class="adj-pilar-num">01</div>
+            <div class="adj-pilar-body">
+              <div class="adj-pilar-title">Pagamento integral comprovado</div>
+              <div class="adj-pilar-desc">O comprador deve demonstrar que quitou o valor acordado — por recibos, extratos bancários, comprovantes de transferência ou cláusulas contratuais cumpridas.</div>
+            </div>
+          </div>
+          <div class="adj-pilar reveal reveal-delay-1">
+            <div class="adj-pilar-num">02</div>
+            <div class="adj-pilar-body">
+              <div class="adj-pilar-title">Vendedor não outorga a escritura</div>
+              <div class="adj-pilar-desc">A recusa pode ser explícita, silenciosa, decorrente de morte do vendedor, dissolução de empresa, paradeiro desconhecido ou simples omissão prolongada.</div>
+            </div>
+          </div>
+          <div class="adj-pilar reveal reveal-delay-2">
+            <div class="adj-pilar-num">03</div>
+            <div class="adj-pilar-body">
+              <div class="adj-pilar-title">Sentença substitui a escritura</div>
+              <div class="adj-pilar-desc">O juiz profere sentença com efeito de escritura. Ela é levada ao Cartório de Registro de Imóveis e a propriedade é transferida sem necessidade da assinatura do vendedor.</div>
+            </div>
+          </div>
+          <div class="adj-pilar reveal reveal-delay-3">
+            <div class="adj-pilar-num">04</div>
+            <div class="adj-pilar-body">
+              <div class="adj-pilar-title">Registro direto no cartório</div>
+              <div class="adj-pilar-desc">Após a decisão favorável, é possível registrar o imóvel diretamente — com a matrícula em seu nome e todos os efeitos jurídicos da propriedade plena.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline do processo -->
+      <div class="adj-timeline-wrap reveal">
+        <div class="adj-timeline-label">Como funciona na prática</div>
+        <div class="adj-timeline">
+          <div class="adj-step">
+            <div class="adj-step-circle">
+              <span class="adj-step-num">01</span>
+            </div>
+            <div>
+              <div class="adj-step-title">Análise documental</div>
+              <div class="adj-step-desc">Reunimos contrato, comprovantes de pagamento e matrícula do imóvel</div>
+            </div>
+          </div>
+          <div class="adj-step">
+            <div class="adj-step-circle">
+              <span class="adj-step-num">02</span>
+            </div>
+            <div>
+              <div class="adj-step-title">Propositura da ação</div>
+              <div class="adj-step-desc">Petição inicial com todos os fundamentos legais e provas robustas</div>
+            </div>
+          </div>
+          <div class="adj-step">
+            <div class="adj-step-circle">
+              <span class="adj-step-num">03</span>
+            </div>
+            <div>
+              <div class="adj-step-title">Citação e instrução</div>
+              <div class="adj-step-desc">O vendedor (ou herdeiros) é notificado para apresentar defesa</div>
+            </div>
+          </div>
+          <div class="adj-step">
+            <div class="adj-step-circle">
+              <span class="adj-step-num">04</span>
+            </div>
+            <div>
+              <div class="adj-step-title">Sentença favorável</div>
+              <div class="adj-step-desc">O juiz determina a transferência compulsória da propriedade</div>
+            </div>
+          </div>
+          <div class="adj-step">
+            <div class="adj-step-circle">
+              <span class="adj-step-num">05</span>
+            </div>
+            <div>
+              <div class="adj-step-title">Registro em cartório</div>
+              <div class="adj-step-desc">O imóvel é registrado em seu nome. Você se torna proprietário pleno</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Banner situações -->
+      <div class="adj-banner reveal">
+        <div>
+          <div class="section-eyebrow" style="margin-bottom:28px">Você se encaixa?</div>
+          <h3 style="font-family:var(--serif);font-size:clamp(1.4rem,2vw,1.9rem);font-weight:700;color:var(--white);margin-bottom:32px;line-height:1.2">Situações em que a Adjudicação se aplica</h3>
+          <div class="adj-banner-checklist">
+            <div class="adj-check-item">
+              <div class="adj-check-icon">
+                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <div class="adj-check-text">
+                <div class="adj-check-title">Vendedor falecido</div>
+                <div class="adj-check-desc">Herdeiros não localizam documentos ou se recusam a formalizar</div>
+              </div>
+            </div>
+            <div class="adj-check-item">
+              <div class="adj-check-icon">
+                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <div class="adj-check-text">
+                <div class="adj-check-title">Vendedor desaparecido</div>
+                <div class="adj-check-desc">Paradeiro desconhecido após o recebimento do valor total</div>
+              </div>
+            </div>
+            <div class="adj-check-item">
+              <div class="adj-check-icon">
+                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <div class="adj-check-text">
+                <div class="adj-check-title">Recusa injustificada</div>
+                <div class="adj-check-desc">O vendedor simplesmente não coopera, mesmo sendo localizado</div>
+              </div>
+            </div>
+            <div class="adj-check-item">
+              <div class="adj-check-icon">
+                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <div class="adj-check-text">
+                <div class="adj-check-title">Empresa encerrada</div>
+                <div class="adj-check-desc">Construtora ou imobiliária dissolvida sem concluir a transferência</div>
+              </div>
+            </div>
+            <div class="adj-check-item">
+              <div class="adj-check-icon">
+                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <div class="adj-check-text">
+                <div class="adj-check-title">Imóvel de loteamento</div>
+                <div class="adj-check-desc">Contrato de promessa de compra e venda quitado sem registro</div>
+              </div>
+            </div>
+            <div class="adj-check-item">
+              <div class="adj-check-icon">
+                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <div class="adj-check-text">
+                <div class="adj-check-title">Herança mal documentada</div>
+                <div class="adj-check-desc">Imóvel adquirido de espólio sem regularização dos herdeiros</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="adj-banner-cta">
+          <div class="adj-banner-cta-label">Análise do seu caso</div>
+          <a href="https://wa.me/5566999155486?text=Ol%C3%A1%2C+Dra.+Dayana.+Gostaria+de+entender+mais+sobre+Usucapi%C3%A3o+e+Regulariza%C3%A7%C3%A3o+do+meu+im%C3%B3vel." target="_blank" class="adj-cta-btn">
+            Falar com a Dra. agora            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <div style="font-family:var(--mono);font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(var(--text-rgb),.35);text-align:right">Atendimento online<br>para todo o Brasil</div>
+        </div>
+      </div>
+
+    </div><!-- /adj-inner -->
+  </div><!-- /container -->
+</section>
+
+<!-- ══════════════════ FAQ ADJUDICAÇÃO ══════════════════ -->
+<section id="faq-adj">
+  <div class="container">
+    <div class="faq-adj-inner">
+
+      <!-- Sticky left -->
+      <div class="faq-adj-sticky reveal">
+        <div class="section-eyebrow">Dúvidas sobre</div>
+        <h2 class="section-title">
+          Adjudicação<br>
+          <em>Compulsória</em>
+        </h2>
+        <div class="gold-divider"></div>
+
+        <div class="faq-adj-count">
+          <span class="faq-adj-count-num">09</span>
+          <span class="faq-adj-count-label">Perguntas&lt;br&gt;respondidas</span>
+        </div>
+
+        <p class="faq-adj-subtitle">
+          As dúvidas mais frequentes sobre o instrumento jurídico que garante o seu direito à propriedade mesmo quando o vendedor não coopera.        </p>
+
+        <div class="faq-adj-cta-block">
+          <div class="faq-adj-cta-title">Sua situação não está aqui? fale diretamente com a Dra</div>
+          <p class="faq-adj-cta-sub">Cada caso tem suas particularidades. Uma análise personalizada pode mudar o desfecho do seu processo.</p>
+          <a href="https://wa.me/5566999155486?text=Ol%C3%A1%2C+Dra.+Dayana.+Gostaria+de+entender+mais+sobre+Usucapi%C3%A3o+e+Regulariza%C3%A7%C3%A3o+do+meu+im%C3%B3vel." target="_blank" class="btn-primary" style="align-self:flex-start">AGENDE UMA CONSULTA</a>
+        </div>
+      </div>
+
+      <!-- FAQ List -->
+      <div class="faq-adj-list reveal reveal-delay-2">
+
+        
+                <div class="faq-adj-item">
+          <button class="faq-adj-q">
+            <div class="faq-adj-q-inner">
+              <span class="faq-adj-q-num">01</span>
+              <span class="faq-adj-q-text">Qual a diferença entre Adjudicação Compulsória e Usucapião?</span>
+            </div>
+            <span class="faq-adj-icon">
+              <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </button>
+          <div class="faq-adj-a">
+            <div class="faq-adj-a-inner">São instrumentos distintos que atendem situações diferentes. <strong>Na Adjudicação Compulsória</strong>, você tem um contrato de compra e venda e comprova o pagamento — o problema é a recusa ou impossibilidade do vendedor em assinar a escritura. <strong>Na Usucapião</strong>, não existe contrato formal: você adquire a propriedade pelo exercício prolongado e ininterrupto da posse, com os requisitos de tempo previstos em lei. Ambas resultam na regularização do imóvel, mas por fundamentos jurídicos completamente diferentes.</div>
+          </div>
+        </div>
+                <div class="faq-adj-item">
+          <button class="faq-adj-q">
+            <div class="faq-adj-q-inner">
+              <span class="faq-adj-q-num">02</span>
+              <span class="faq-adj-q-text">Preciso ter o contrato de compra e venda em mãos?</span>
+            </div>
+            <span class="faq-adj-icon">
+              <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </button>
+          <div class="faq-adj-a">
+            <div class="faq-adj-a-inner">O contrato é o principal documento da ação, mas sua ausência não inviabiliza necessariamente o processo. Podemos utilizar recibos de pagamento, comprovantes bancários, declarações de testemunhas, registro em cartório de notas ou qualquer outra prova robusta da negociação e do pagamento. <strong>A análise documental do seu caso é o primeiro passo</strong> — e fazemos isso gratuitamente.</div>
+          </div>
+        </div>
+                <div class="faq-adj-item">
+          <button class="faq-adj-q">
+            <div class="faq-adj-q-inner">
+              <span class="faq-adj-q-num">03</span>
+              <span class="faq-adj-q-text">O imóvel precisa estar no nome do vendedor no cartório?</span>
+            </div>
+            <span class="faq-adj-icon">
+              <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </button>
+          <div class="faq-adj-a">
+            <div class="faq-adj-a-inner">Idealmente sim — o vendedor deve constar na matrícula do imóvel como proprietário. Porém, há casos em que a cadeia de transmissões precisa ser regularizada antes ou em conjunto com a adjudicação. <strong>Se o imóvel passou por várias mãos sem registro formal</strong>, cada situação exige análise específica para determinar a estratégia mais eficiente.</div>
+          </div>
+        </div>
+                <div class="faq-adj-item">
+          <button class="faq-adj-q">
+            <div class="faq-adj-q-inner">
+              <span class="faq-adj-q-num">04</span>
+              <span class="faq-adj-q-text">O que acontece se o vendedor já faleceu?</span>
+            </div>
+            <span class="faq-adj-icon">
+              <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </button>
+          <div class="faq-adj-a">
+            <div class="faq-adj-a-inner">É exatamente para isso que a ação existe. Quando o vendedor falece sem ter outorgado a escritura, a ação de adjudicação é movida em face do <strong>espólio</strong> (representado pelo inventariante) ou diretamente contra os <strong>herdeiros identificados</strong>. Se não há inventário aberto, podemos trabalhar em conjunto com a abertura do inventário. O falecimento do vendedor não extingue o seu direito à propriedade.</div>
+          </div>
+        </div>
+                <div class="faq-adj-item">
+          <button class="faq-adj-q">
+            <div class="faq-adj-q-inner">
+              <span class="faq-adj-q-num">05</span>
+              <span class="faq-adj-q-text">Qual o prazo médio para conclusão do processo?</span>
+            </div>
+            <span class="faq-adj-icon">
+              <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </button>
+          <div class="faq-adj-a">
+            <div class="faq-adj-a-inner">O prazo varia conforme a comarca, a complexidade do caso e a colaboração (ou resistência) da parte contrária. Em média, processos bem instruídos e sem grandes contestações tramitam entre <strong>1 e 3 anos</strong>. Em varas com fluxo menor, pode ser mais rápido. A qualidade da petição inicial e a robustez da documentação apresentada desde o início fazem diferença significativa no andamento.</div>
+          </div>
+        </div>
+                <div class="faq-adj-item">
+          <button class="faq-adj-q">
+            <div class="faq-adj-q-inner">
+              <span class="faq-adj-q-num">06</span>
+              <span class="faq-adj-q-text">É possível fazer a adjudicação de forma extrajudicial?</span>
+            </div>
+            <span class="faq-adj-icon">
+              <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </button>
+          <div class="faq-adj-a">
+            <div class="faq-adj-a-inner">Desde a reforma do Código de Processo Civil e a expansão dos procedimentos extrajudiciais, <strong>em alguns estados já é possível</strong> realizar a adjudicação diretamente em cartório, sem necessidade de ação judicial — quando há consenso ou quando o caso atende requisitos específicos. Essa via é mais rápida e menos custosa. Analisamos se o seu caso se enquadra nessa possibilidade antes de indicar o caminho mais adequado.</div>
+          </div>
+        </div>
+                <div class="faq-adj-item">
+          <button class="faq-adj-q">
+            <div class="faq-adj-q-inner">
+              <span class="faq-adj-q-num">07</span>
+              <span class="faq-adj-q-text">Quanto custa entrar com a ação de adjudicação?</span>
+            </div>
+            <span class="faq-adj-icon">
+              <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </button>
+          <div class="faq-adj-a">
+            <div class="faq-adj-a-inner">Os custos envolvem: <strong>honorários advocatícios</strong> (que podem ser combinados de diferentes formas, inclusive êxito), <strong>custas processuais</strong> do tribunal (calculadas sobre o valor do imóvel) e eventuais despesas com perícia ou diligências específicas. Pessoas de baixa renda podem ter direito à gratuidade judiciária. Em nossa consulta inicial, apresentamos uma estimativa clara e transparente de todos os custos envolvidos.</div>
+          </div>
+        </div>
+                <div class="faq-adj-item">
+          <button class="faq-adj-q">
+            <div class="faq-adj-q-inner">
+              <span class="faq-adj-q-num">08</span>
+              <span class="faq-adj-q-text">Posso perder a ação de adjudicação?</span>
+            </div>
+            <span class="faq-adj-icon">
+              <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </button>
+          <div class="faq-adj-a">
+            <div class="faq-adj-a-inner">O risco existe quando a documentação é insuficiente ou quando há vícios no contrato original. Os principais motivos de improcedência são: <strong>ausência de prova do pagamento integral</strong>, contrato com cláusulas que permitam a resilição pelo vendedor, imóvel com dívidas ou disputas anteriores, ou problemas na cadeia dominial. Por isso, a análise prévia rigorosa dos documentos é fundamental antes de ingressar com a ação.</div>
+          </div>
+        </div>
+                <div class="faq-adj-item">
+          <button class="faq-adj-q">
+            <div class="faq-adj-q-inner">
+              <span class="faq-adj-q-num">09</span>
+              <span class="faq-adj-q-text">Depois da sentença, o imóvel já fica no meu nome automaticamente?</span>
+            </div>
+            <span class="faq-adj-icon">
+              <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </button>
+          <div class="faq-adj-a">
+            <div class="faq-adj-a-inner">Não automaticamente — é necessário um passo adicional. Com a sentença favorável transitada em julgado (sem mais recursos), você leva o <strong>mandado judicial ao Cartório de Registro de Imóveis</strong> competente. O cartório fará o registro da transferência de propriedade, e a partir daí o imóvel constará na matrícula com o seu nome. Esse procedimento final costuma levar de 30 a 90 dias, dependendo do cartório.</div>
+          </div>
+        </div>
+        
+      </div><!-- /faq-adj-list -->
+    </div><!-- /faq-adj-inner -->
+  </div>
+</section>
+
+<!-- ══════════════════ SOBRE A DRA ══════════════════ -->
+<section id="escritorio" style="padding:140px 0; background:var(--noir-2); border-bottom:1px solid rgba(201,168,76,.05);">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:80px; align-items:center;">
+      
+      <div class="reveal" style="position:relative;">
+        <div style="border-radius:24px; overflow:hidden; position:relative; aspect-ratio:4/5; border:1px solid rgba(201,168,76,.15);">
+          <img src="https://i.imgur.com/ieYRLuv.jpeg" style="width:100%; height:100%; object-fit:cover; filter:grayscale(20%);" alt="Escritório">
+          <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(var(--bg-rgb),.9), transparent);"></div>
+        </div>
+        <div style="position:absolute; bottom:-30px; right:-20px; background:var(--noir); border:1px solid rgba(201,168,76,.3); padding:32px; border-radius:16px; box-shadow:0 20px 40px rgba(0,0,0,.6); display:flex; gap:32px; z-index:2;">
+          <div>
+            <div style="font-family:var(--serif); font-size:2.4rem; font-weight:700; color:var(--gold); line-height:1;">100%</div>
+            <div style="font-family:var(--sans); font-size:.65rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(var(--text-rgb),.6); margin-top:8px;">foco no cliente</div>
+          </div>
+          <div style="width:1px; background:rgba(201,168,76,.2);"></div>
+          <div>
+            <div style="font-family:var(--serif); font-size:2.4rem; font-weight:700; color:var(--gold); line-height:1;">100%</div>
+            <div style="font-family:var(--sans); font-size:.65rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(var(--text-rgb),.6); margin-top:8px;">segurança jurídica</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <div class="section-eyebrow">O Escritório</div>
+        <h2 class="section-title" style="margin-bottom:24px; font-size:clamp(2rem,3.5vw,3rem);">Dedicação, lealdade e<br><em>eficiência.</em></h2>
+        <p style="font-family:var(--serif2); font-size:1.15rem; color:rgba(var(--text-rgb),.7); line-height:1.8; margin-bottom:40px;">O escritório está plenamente apto a atender às demandas dos clientes com transparência, compromisso e atendimento humanizado, buscando o resultado mais justo em defesa dos seus direitos.</p>
+
+        <div style="display:flex; flex-direction:column; gap:24px;">
+                    <div style="display:flex; gap:16px; align-items:flex-start;">
+            <div style="width:32px; height:32px; border-radius:50%; background:rgba(201,168,76,.08); color:var(--gold); display:flex; align-items:center; justify-content:center; flex-shrink:0; border:1px solid rgba(201,168,76,.2);"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+            <div>
+              <h4 style="font-family:var(--serif); font-size:1.05rem; color:var(--white); margin-bottom:6px;">Entre em contato</h4>
+              <p style="font-family:var(--serif2); font-size:.95rem; color:rgba(var(--text-rgb),.55); line-height:1.6;">Fale pelo WhatsApp através dos botões disponíveis no site para iniciar seu atendimento.</p>
+            </div>
+          </div>
+                    <div style="display:flex; gap:16px; align-items:flex-start;">
+            <div style="width:32px; height:32px; border-radius:50%; background:rgba(201,168,76,.08); color:var(--gold); display:flex; align-items:center; justify-content:center; flex-shrink:0; border:1px solid rgba(201,168,76,.2);"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+            <div>
+              <h4 style="font-family:var(--serif); font-size:1.05rem; color:var(--white); margin-bottom:6px;">Atendimento ágil</h4>
+              <p style="font-family:var(--serif2); font-size:.95rem; color:rgba(var(--text-rgb),.55); line-height:1.6;">Análise imediata do seu caso com elaboração de estratégia personalizada.</p>
+            </div>
+          </div>
+                    <div style="display:flex; gap:16px; align-items:flex-start;">
+            <div style="width:32px; height:32px; border-radius:50%; background:rgba(201,168,76,.08); color:var(--gold); display:flex; align-items:center; justify-content:center; flex-shrink:0; border:1px solid rgba(201,168,76,.2);"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+            <div>
+              <h4 style="font-family:var(--serif); font-size:1.05rem; color:var(--white); margin-bottom:6px;">Transparência total</h4>
+              <p style="font-family:var(--serif2); font-size:.95rem; color:rgba(var(--text-rgb),.55); line-height:1.6;">Acompanhamento constante com esclarecimentos completos em cada etapa.</p>
+            </div>
+          </div>
+                    <div style="display:flex; gap:16px; align-items:flex-start;">
+            <div style="width:32px; height:32px; border-radius:50%; background:rgba(201,168,76,.08); color:var(--gold); display:flex; align-items:center; justify-content:center; flex-shrink:0; border:1px solid rgba(201,168,76,.2);"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+            <div>
+              <h4 style="font-family:var(--serif); font-size:1.05rem; color:var(--white); margin-bottom:6px;">Sigilo e ética</h4>
+              <p style="font-family:var(--serif2); font-size:.95rem; color:rgba(var(--text-rgb),.55); line-height:1.6;">Suas informações e documentações tratadas com total sigilo profissional.</p>
+            </div>
+          </div>
+                  </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<section id="como-funciona" style="padding:140px 0; background:var(--noir); position:relative; overflow:hidden;">
+  <div style="position:absolute; inset:0; background:radial-gradient(ellipse at center, rgba(201,168,76,.04) 0%, transparent 60%);"></div>
+  <div class="container" style="position:relative; z-index:1;">
+    
+    <div style="text-align:center; max-width:700px; margin:0 auto 80px;" class="reveal">
+      <div class="section-eyebrow" style="justify-content:center;">Como Funciona</div>
+      <h2 class="section-title">Entenda como será<br><em>seu atendimento</em></h2>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:24px; margin-bottom:60px;" class="reveal reveal-delay-2">
+            <div style="background:var(--noir-3); padding:40px 32px; border:1px solid rgba(201,168,76,.06); transition:all .3s; position:relative;">
+        <div style="font-family:var(--serif); font-size:3.5rem; font-weight:700; color:rgba(201,168,76,.08); line-height:1; margin-bottom:20px; transition:color .3s;">01</div>
+        <h4 style="font-family:var(--serif); font-size:1.1rem; font-weight:600; color:var(--white); margin-bottom:12px; line-height:1.3;">Contato Inicial</h4>
+        <p style="font-family:var(--serif2); font-size:.95rem; color:rgba(var(--text-rgb),.6); line-height:1.6;">Inicie o atendimento de forma ágil pelo nosso WhatsApp oficial.</p>
+      </div>
+            <div style="background:var(--noir-3); padding:40px 32px; border:1px solid rgba(201,168,76,.06); transition:all .3s; position:relative;">
+        <div style="font-family:var(--serif); font-size:3.5rem; font-weight:700; color:rgba(201,168,76,.08); line-height:1; margin-bottom:20px; transition:color .3s;">02</div>
+        <h4 style="font-family:var(--serif); font-size:1.1rem; font-weight:600; color:var(--white); margin-bottom:12px; line-height:1.3;">Análise Documental</h4>
+        <p style="font-family:var(--serif2); font-size:.95rem; color:rgba(var(--text-rgb),.6); line-height:1.6;">Avaliamos a matrícula e os documentos para definir a melhor via.</p>
+      </div>
+            <div style="background:var(--noir-3); padding:40px 32px; border:1px solid rgba(201,168,76,.06); transition:all .3s; position:relative;">
+        <div style="font-family:var(--serif); font-size:3.5rem; font-weight:700; color:rgba(201,168,76,.08); line-height:1; margin-bottom:20px; transition:color .3s;">03</div>
+        <h4 style="font-family:var(--serif); font-size:1.1rem; font-weight:600; color:var(--white); margin-bottom:12px; line-height:1.3;">Estratégia Legal</h4>
+        <p style="font-family:var(--serif2); font-size:.95rem; color:rgba(var(--text-rgb),.6); line-height:1.6;">Apresentamos o caminho: Adjudicação, Usucapião ou Extrajudicial.</p>
+      </div>
+            <div style="background:var(--noir-3); padding:40px 32px; border:1px solid rgba(201,168,76,.06); transition:all .3s; position:relative;">
+        <div style="font-family:var(--serif); font-size:3.5rem; font-weight:700; color:rgba(201,168,76,.08); line-height:1; margin-bottom:20px; transition:color .3s;">04</div>
+        <h4 style="font-family:var(--serif); font-size:1.1rem; font-weight:600; color:var(--white); margin-bottom:12px; line-height:1.3;">Ação e Registro</h4>
+        <p style="font-family:var(--serif2); font-size:.95rem; color:rgba(var(--text-rgb),.6); line-height:1.6;">Conduzimos o procedimento até a escritura definitiva no seu nome.</p>
+      </div>
+          </div>
+
+    <div style="text-align:center;" class="reveal reveal-delay-3">
+      <a href="https://wa.me/5566999155486?text=Ol%C3%A1%2C+Dra.+Dayana.+Gostaria+de+entender+mais+sobre+Usucapi%C3%A3o+e+Regulariza%C3%A7%C3%A3o+do+meu+im%C3%B3vel." target="_blank" class="btn-primary">Quero apoio jurídico personalizado</a>
+    </div>
+    
+  </div>
+</section>
+
+<!-- ══════════════════ TIPOS DE USUCAPIÃO ══════════════════ -->
+<section id="usu-tipos">
+  <div class="container">
+    <div class="usu-header reveal">
+      <div class="section-eyebrow">Modalidades Previstas em Lei</div>
+      <h2 class="section-title">Os tipos de<br><em>Usucapião</em></h2>
+      <p style="font-family:var(--serif2);font-size:1.1rem;font-weight:300;color:rgba(var(--text-rgb),.6);line-height:1.75;margin-top:20px">Cada situação se encaixa em uma modalidade diferente. Entender qual se aplica ao seu caso é o primeiro passo para regularizar o imóvel.</p>
+    </div>
+
+    <div class="usu-tipos-grid reveal">
+      <div class="usu-tipo-card">
+        <div class="usu-tipo-num">01</div>
+        <div class="usu-tipo-name">Usucapião Extraordinária</div>
+        <div class="usu-tipo-prazo">15 anos de posse</div>
+        <p class="usu-tipo-desc">A mais abrangente. Não exige boa-fé nem justo título — apenas a posse ininterrupta e sem oposição. O prazo cai para 10 anos se o possuidor tiver estabelecido moradia habitual ou realizado obras e serviços produtivos.</p>
+        <div class="usu-tipo-req">
+          <div class="usu-tipo-req-item">Art. 1.238 do Código Civil</div>
+          <div class="usu-tipo-req-item">Não requer boa-fé comprovada</div>
+          <div class="usu-tipo-req-item">Redução para 10 anos com moradia ou obras</div>
+        </div>
+      </div>
+      <div class="usu-tipo-card">
+        <div class="usu-tipo-num">02</div>
+        <div class="usu-tipo-name">Usucapião Ordinária</div>
+        <div class="usu-tipo-prazo">10 anos de posse</div>
+        <p class="usu-tipo-desc">Exige justo título e boa-fé. O possuidor precisa demonstrar que adquiriu o bem de forma aparentemente legítima (ex: contrato de compra e venda, mesmo sem registro). Prazo reduz para 5 anos em determinadas condições.</p>
+        <div class="usu-tipo-req">
+          <div class="usu-tipo-req-item">Art. 1.242 do Código Civil</div>
+          <div class="usu-tipo-req-item">Justo título + boa-fé obrigatórios</div>
+          <div class="usu-tipo-req-item">5 anos se houver moradia e o título tiver sido cancelado</div>
+        </div>
+      </div>
+      <div class="usu-tipo-card">
+        <div class="usu-tipo-num">03</div>
+        <div class="usu-tipo-name">Usucapião Especial Urbana</div>
+        <div class="usu-tipo-prazo">5 anos de posse</div>
+        <p class="usu-tipo-desc">Criada para proteger a moradia. O imóvel deve ter até 250m², ser usado como moradia do possuidor ou de sua família, e ele não pode possuir outro imóvel. Prevista também na Constituição Federal.</p>
+        <div class="usu-tipo-req">
+          <div class="usu-tipo-req-item">Art. 183 da CF + Art. 1.240 do CC</div>
+          <div class="usu-tipo-req-item">Imóvel urbano de até 250m²</div>
+          <div class="usu-tipo-req-item">Não possuir outro imóvel — nunca</div>
+        </div>
+      </div>
+      <div class="usu-tipo-card">
+        <div class="usu-tipo-num">04</div>
+        <div class="usu-tipo-name">Usucapião Especial Rural</div>
+        <div class="usu-tipo-prazo">5 anos de posse</div>
+        <p class="usu-tipo-desc">Protege o trabalhador rural que utiliza a terra para sua sobrevivência e de sua família. Área máxima de 50 hectares, com exigência de trabalho produtivo na terra.</p>
+        <div class="usu-tipo-req">
+          <div class="usu-tipo-req-item">Art. 191 da CF + Art. 1.239 do CC</div>
+          <div class="usu-tipo-req-item">Área rural de até 50 hectares</div>
+          <div class="usu-tipo-req-item">Produtividade e moradia no local</div>
+        </div>
+      </div>
+      <div class="usu-tipo-card">
+        <div class="usu-tipo-num">05</div>
+        <div class="usu-tipo-name">Usucapião Familiar</div>
+        <div class="usu-tipo-prazo">2 anos de posse</div>
+        <p class="usu-tipo-desc">A modalidade mais rápida. Aplicada quando um cônjuge ou companheiro abandona o lar e o outro permanece exercendo a posse exclusiva. Exige imóvel urbano de até 250m² e que o beneficiado não tenha outro imóvel.</p>
+        <div class="usu-tipo-req">
+          <div class="usu-tipo-req-item">Art. 1.240-A do Código Civil</div>
+          <div class="usu-tipo-req-item">Abandono de lar comprovado</div>
+          <div class="usu-tipo-req-item">Menor prazo entre todas as modalidades</div>
+        </div>
+      </div>
+      <div class="usu-tipo-card">
+        <div class="usu-tipo-num">06</div>
+        <div class="usu-tipo-name">Usucapião Extrajudicial</div>
+        <div class="usu-tipo-prazo">Direto em cartório</div>
+        <p class="usu-tipo-desc">Desde 2015, é possível reconhecer a usucapião diretamente no Cartório de Registro de Imóveis, sem precisar de ação judicial, desde que haja consenso entre as partes e documentação adequada.</p>
+        <div class="usu-tipo-req">
+          <div class="usu-tipo-req-item">Art. 1.071 do CPC — Lei 13.105/2015</div>
+          <div class="usu-tipo-req-item">Via mais rápida quando há acordo</div>
+          <div class="usu-tipo-req-item">Exige anuência do proprietário registral</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bloco comparativo Usucapião vs Adjudicação -->
+    <div class="usu-vs-block reveal" style="margin-top:80px">
+      <div class="usu-vs-col">
+        <div class="usu-vs-title">Usucapião<br><em>por posse</em></div>
+        <p class="usu-vs-sub">Quando não há contrato — apenas a ocupação do imóvel por anos.</p>
+        <div class="usu-vs-list">
+          <div class="usu-vs-item">
+            <div class="usu-vs-icon"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></div>
+            <div class="usu-vs-item-text"><strong>Sem contrato formal</strong>A posse contínua e pública por anos é o fundamento.</div>
+          </div>
+          <div class="usu-vs-item">
+            <div class="usu-vs-icon"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+            <div class="usu-vs-item-text"><strong>Prazo mínimo de 2 anos</strong>Dependendo da modalidade, pode chegar a 15 anos.</div>
+          </div>
+          <div class="usu-vs-item">
+            <div class="usu-vs-icon"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+            <div class="usu-vs-item-text"><strong>Provas: posse, moradia, testemunhas</strong>Fotos, contas, declarações, georreferenciamento.</div>
+          </div>
+          <div class="usu-vs-item">
+            <div class="usu-vs-icon"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg></div>
+            <div class="usu-vs-item-text"><strong>Judicial ou extrajudicial</strong>A via extrajudicial (cartório) é possível desde 2015.</div>
+          </div>
+        </div>
+      </div>
+      <div class="usu-vs-col">
+        <div class="usu-vs-title">Adjudicação<br><em>compulsória</em></div>
+        <p class="usu-vs-sub">Quando há contrato e pagamento — mas o vendedor não assina a escritura.</p>
+        <div class="usu-vs-list">
+          <div class="usu-vs-item">
+            <div class="usu-vs-icon"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+            <div class="usu-vs-item-text"><strong>Exige contrato + pagamento integral</strong>A relação negocial é o fundamento jurídico.</div>
+          </div>
+          <div class="usu-vs-item">
+            <div class="usu-vs-icon"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+            <div class="usu-vs-item-text"><strong>Sem prazo mínimo de posse</strong>O direito nasce com o pagamento quitado.</div>
+          </div>
+          <div class="usu-vs-item">
+            <div class="usu-vs-icon"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+            <div class="usu-vs-item-text"><strong>Provas: contrato, recibos, extratos</strong>Documentação financeira e da negociação.</div>
+          </div>
+          <div class="usu-vs-item">
+            <div class="usu-vs-icon"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/></svg></div>
+            <div class="usu-vs-item-text"><strong>Sentença substitui escritura</strong>O juiz determina a transferência direta ao cartório.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ REQUISITOS LEGAIS DA USUCAPIÃO ══════════════════ -->
+<section id="usu-requisitos">
+  <div class="container">
+    <div class="usu-req-grid">
+      <div class="usu-req-sticky reveal">
+        <div class="section-eyebrow">Base Jurídica</div>
+        <h2 class="section-title">O que você<br>precisa <em>provar</em></h2>
+        <div class="gold-divider"></div>
+        <p style="font-family:var(--serif2);font-size:1.05rem;color:rgba(var(--text-rgb),.6);line-height:1.75;margin-bottom:32px">Para que a usucapião seja reconhecida — judicial ou extrajudicialmente — é necessário demonstrar a presença dos requisitos legais ao longo do período exigido.</p>
+        <div class="usu-lei-tag">
+          <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          Código Civil Brasileiro — Arts. 1.238 a 1.244        </div>
+        <div class="usu-alerta">
+          <p class="usu-alerta-text">A ausência de qualquer um desses requisitos pode inviabilizar ou atrasar o reconhecimento da usucapião. A análise jurídica prévia é fundamental para construir a estratégia certa.</p>
+        </div>
+        <br>
+        <a href="https://wa.me/5566999155486?text=Ol%C3%A1%2C+Dra.+Dayana.+Gostaria+de+entender+mais+sobre+Usucapi%C3%A3o+e+Regulariza%C3%A7%C3%A3o+do+meu+im%C3%B3vel." target="_blank" class="btn-primary">Analisar meu caso</a>
+      </div>
+
+      <div class="usu-req-list reveal reveal-delay-2">
+        <div class="usu-req-item">
+          <div class="usu-req-num-col">01</div>
+          <div class="usu-req-body">
+            <div class="usu-req-title">Posse contínua e ininterrupta</div>
+            <p class="usu-req-desc">O possuidor deve demonstrar que exerceu a posse de forma ininterrupta durante todo o período legal exigido. Ausências prolongadas ou abandono do imóvel podem interromper o prazo e zerar a contagem.</p>
+          </div>
+        </div>
+        <div class="usu-req-item">
+          <div class="usu-req-num-col">02</div>
+          <div class="usu-req-body">
+            <div class="usu-req-title">Posse pacífica e sem oposição</div>
+            <p class="usu-req-desc">A posse deve ser exercida sem conflitos, disputas judiciais ou oposição formal pelo proprietário. Uma notificação extrajudicial ou ação judicial do dono do imóvel pode interromper o prazo de usucapião.</p>
+          </div>
+        </div>
+        <div class="usu-req-item">
+          <div class="usu-req-num-col">03</div>
+          <div class="usu-req-body">
+            <div class="usu-req-title">Posse pública e ostensiva</div>
+            <p class="usu-req-desc">A ocupação deve ser visível e conhecida. O possuidor não pode exercer a posse de forma clandestina ou oculta. O reconhecimento pelos vizinhos, pelos Correios, pelas contas de consumo e pelos órgãos públicos é fundamental.</p>
+          </div>
+        </div>
+        <div class="usu-req-item">
+          <div class="usu-req-num-col">04</div>
+          <div class="usu-req-body">
+            <div class="usu-req-title">Posse com animus domini</div>
+            <p class="usu-req-desc">É preciso demonstrar que o possuidor se comporta como se fosse o verdadeiro dono do imóvel — realizando melhorias, pagando impostos (IPTU), respondendo por manutenção e encargos do bem.</p>
+          </div>
+        </div>
+        <div class="usu-req-item">
+          <div class="usu-req-num-col">05</div>
+          <div class="usu-req-body">
+            <div class="usu-req-title">Decurso do prazo legal</div>
+            <p class="usu-req-desc">O tempo exigido varia conforme a modalidade: de 2 anos (usucapião familiar) até 15 anos (extraordinária sem moradia). É possível somar o prazo de posses anteriores — do antecessor — desde que a posse seja transferida de forma legítima.</p>
+          </div>
+        </div>
+        <div class="usu-req-item">
+          <div class="usu-req-num-col">06</div>
+          <div class="usu-req-body">
+            <div class="usu-req-title">Imóvel suscetível de usucapião</div>
+            <p class="usu-req-desc">Nem todo imóvel pode ser usucapido. Bens públicos (terras da União, Estados, Municípios), imóveis com indisponibilidade judicial e áreas de preservação permanente são insuscetíveis de usucapião, independentemente do tempo de posse.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ FAQ USUCAPIÃO (ORIGINAL) ══════════════════ -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-inner">
+      <div class="faq-sticky reveal">
+        <div class="section-eyebrow">Dúvidas Frequentes</div>
+        <h2 class="section-title">Sobre a<br><em>Usucapião</em></h2>
+        <div class="gold-divider"></div>
+        <p style="font-family:var(--serif2);font-size:1.05rem;color:rgba(var(--text-rgb),.65);line-height:1.7;margin-bottom:40px">Dúvidas comuns sobre usucapião, inventários e regularização de imóveis no Brasil.</p>
+        <a href="https://wa.me/5566999155486?text=Ol%C3%A1%2C+Dra.+Dayana.+Gostaria+de+entender+mais+sobre+Usucapi%C3%A3o+e+Regulariza%C3%A7%C3%A3o+do+meu+im%C3%B3vel." target="_blank" class="btn-primary">Agendar Consulta</a>
+      </div>
+      <div class="faq-list reveal reveal-delay-2">
+                <div class="faq-item">
+          <button class="faq-q">
+            <span class="faq-q-text">O que é a Usucapião?</span>
+            <span class="faq-icon"><svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg></span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">A Usucapião é uma forma de adquirir a propriedade definitiva (escritura) de um imóvel através do tempo de posse contínua, pacífica e sem oposição.</div></div>
+        </div>
+                <div class="faq-item">
+          <button class="faq-q">
+            <span class="faq-q-text">Quanto tempo de posse preciso ter?</span>
+            <span class="faq-icon"><svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg></span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Depende do tipo de usucapião. Existem modalidades que exigem apenas 5 anos (Usucapião Especial), outras 10 anos e algumas 15 anos. É necessária a análise do caso concreto.</div></div>
+        </div>
+                <div class="faq-item">
+          <button class="faq-q">
+            <span class="faq-q-text">A Usucapião Extrajudicial é mais rápida?</span>
+            <span class="faq-icon"><svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg></span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Sim. Feita em Cartório, a usucapião extrajudicial pode resolver em meses o que na justiça levaria anos, desde que haja acordo e os requisitos sejam cumpridos.</div></div>
+        </div>
+                <div class="faq-item">
+          <button class="faq-q">
+            <span class="faq-q-text">Tenho apenas um contrato de gaveta. Posso regularizar?</span>
+            <span class="faq-icon"><svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg></span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Com certeza. O contrato de compra e venda (recibo ou contrato de gaveta) é uma excelente prova para ingressar com a ação de usucapião e obter a matrícula oficial do imóvel.</div></div>
+        </div>
+              </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ FOOTER / CONTATO ══════════════════ -->
+<footer id="contato">
+  <div class="contato-bg"></div>
+  <div class="container">
+    <div class="contato-inner reveal">
+      <div class="contato-content">
+        <div class="section-eyebrow">Pronto para regularizar?</div>
+        <h2 class="contato-title">Proteja seu patrimônio com<br><em>segurança jurídica.</em></h2>
+        <p class="contato-sub">Agende uma consulta e descubra como nossa assessoria especializada pode ajudar — em Usucapião, Adjudicação Compulsória e Regularização de Imóveis.</p>
+        <a href="https://wa.me/5566999155486?text=Ol%C3%A1%2C+Dra.+Dayana.+Gostaria+de+entender+mais+sobre+Usucapi%C3%A3o+e+Regulariza%C3%A7%C3%A3o+do+meu+im%C3%B3vel." target="_blank" class="contato-btn">Falar no WhatsApp</a>
+      </div>
+      <div class="contato-info">
+        <div class="info-block">
+          <h4>Atendimento</h4>
+          <p>Online para todo o Brasil<br>e presencial em Cuiabá.</p>
+          <br><h4>Contato</h4>
+          <a href="mailto:dayanagoncalves.oab@outlook.com">dayanagoncalves.oab@outlook.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-divider reveal"></div>
+    <div class="footer-bottom reveal reveal-delay-1">
+      <div class="footer-logo-wrap">
+        <img src="https://i.imgur.com/HKnZY51.png" alt="Dra. Dayana Gonçalves" class="footer-img">
+        <span class="footer-oab">OAB/MT 22438/B</span>
+      </div>
+      <span class="footer-copy">© 2026 — Dra. Dayana Gonçalves. Todos os direitos reservados.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/5566999155486?text=Ol%C3%A1%2C+Dra.+Dayana.+Gostaria+de+entender+mais+sobre+Usucapi%C3%A3o+e+Regulariza%C3%A7%C3%A3o+do+meu+im%C3%B3vel." class="floating-wpp" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.555 4.122 1.528 5.854L.057 23.142a.5.5 0 00.611.648l5.457-1.431A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.917a9.923 9.923 0 01-5.065-1.385l-.363-.215-3.767.988 1.007-3.669-.236-.377A9.917 9.917 0 012.083 12C2.083 6.514 6.514 2.083 12 2.083S21.917 6.514 21.917 12 17.486 21.917 12 21.917z"/></svg>
+</a>
+
+<!-- Theme Toggle -->
+<button class="theme-toggle" id="themeToggle" aria-label="Alternar Tema">
+  <svg class="sun-icon" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+  <svg class="moon-icon" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+</button>
+
+<script>
+/* Tema */
+document.getElementById('themeToggle').addEventListener('click', () => {
+  const t = (document.documentElement.getAttribute('data-theme') || 'dark') === 'light' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', t);
+  localStorage.setItem('theme', t);
+});
+
+/* Drawer lateral (menu mobile) */
+const menuToggle = document.getElementById('menuToggle');
+const mobileDrawer = document.getElementById('mobileDrawer');
+const drawerOverlay = document.getElementById('drawerOverlay');
+
+function openDrawer() {
+  menuToggle.classList.add('active');
+  mobileDrawer.classList.add('active');
+  drawerOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeDrawer() {
+  menuToggle.classList.remove('active');
+  mobileDrawer.classList.remove('active');
+  drawerOverlay.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+menuToggle.addEventListener('click', () => {
+  mobileDrawer.classList.contains('active') ? closeDrawer() : openDrawer();
+});
+drawerOverlay.addEventListener('click', closeDrawer);
+
+/* Fechar drawer ao clicar em links internos */
+document.querySelectorAll('.drawer-link').forEach(link => {
+  link.addEventListener('click', closeDrawer);
+});
+
+/* Nav scroll */
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+});
+
+/* Reveal on scroll */
+const observer = new IntersectionObserver(
+  (entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); },
+  { threshold: 0.1 }
+);
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* FAQ Usucapião (original) */
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+/* FAQ Adjudicação (novo) */
+document.querySelectorAll('.faq-adj-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-adj-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-adj-item.open').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+/* Hover suave nas steps da timeline */
+document.querySelectorAll('.adj-step').forEach(step => {
+  step.addEventListener('mouseenter', () => {
+    step.querySelector('.adj-step-circle').style.boxShadow = '0 0 0 6px rgba(201,168,76,.08)';
+  });
+  step.addEventListener('mouseleave', () => {
+    step.querySelector('.adj-step-circle').style.boxShadow = '';
+  });
+});
+</script>
+</body>
+</html>
